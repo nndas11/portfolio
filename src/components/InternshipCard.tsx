@@ -1,11 +1,22 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { CalendarDays, Code2, Globe } from 'lucide-react';
+import { BriefcaseBusiness, Calendar, Users } from 'lucide-react';
 
-const InternshipCard = () => {
+interface InternshipCardProps {
+  tool: {
+    result: {
+      lookingFor: string;
+      role: string;
+      availability: string;
+    }
+  }
+}
+
+const InternshipCard = ({ tool }: InternshipCardProps) => {
+  const { result } = tool;
   const openMail = () => {
-    window.open('mailto:raphaelgiraud12@gmail.com', '_blank');
+    window.open('mailto:mohammednihadkp7@gmail.com', '_blank');
   };
 
   return (
@@ -13,121 +24,63 @@ const InternshipCard = () => {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
-      className="bg-accent mx-auto mt-8 w-full max-w-4xl rounded-3xl px-6 py-8 font-sans sm:px-10 md:px-16 md:py-12"
+      className="bg-accent mx-auto mt-8 w-full max-w-4xl rounded-3xl px-6 py-8 font-sans sm:px-10 md:px-16 md:py-12 relative z-20"
     >
       {/* Header */}
-      <div className="mb-6 flex flex-col items-center sm:flex-row sm:items-center sm:justify-between">
+      <div className="mb-10 flex flex-col items-center gap-y-4 text-center sm:flex-row sm:items-center sm:justify-between sm:text-left">
         <div className="flex items-center gap-4">
-          {/* Avatar placeholder */}
-          <div className="bg-muted h-16 w-16 overflow-hidden rounded-full shadow-md">
-            <img
-              src="/avatar-raphael.jpg"
-              alt="Raphael's avatar"
-              className="h-full w-full object-cover"
-            />
-          </div>
+          <img
+            src="/avatar_nihad.jpeg"
+            alt="Mohammed Nihad's avatar"
+            className="bg-muted h-16 w-16 rounded-full object-cover object-top shadow-md"
+          />
           <div>
             <h2 className="text-foreground text-2xl font-semibold">
-              Raphael Giraud
+              Yes, I'm Looking!
             </h2>
             <p className="text-muted-foreground text-sm">
-              Intership Application
+              Open to new opportunities
             </p>
           </div>
         </div>
-
-        {/* Live badge */}
-        <div className="mt-4 flex items-center gap-2 sm:mt-0">
-          <span className="flex items-center gap-1 rounded-full border border-green-500 px-3 py-0.5 text-sm font-medium text-green-500">
+        <div className="shrink-0">
+          <span className="flex items-center gap-1.5 rounded-full border border-green-400 bg-green-50 px-3 py-1 text-xs font-medium text-green-700 dark:bg-green-900/50 dark:text-green-300">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-500 opacity-75"></span>
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
               <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
             </span>
-            Live
+            Available
           </span>
         </div>
       </div>
-
-      {/* Internship Info */}
-      <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-        <div className="flex items-start gap-3">
-          <CalendarDays className="mt-1 h-5 w-5 text-blue-500" />
-          <div>
-            <p className="text-foreground text-sm font-medium">Duration</p>
-            <p className="text-muted-foreground text-sm">
-              6 months – starting September 2025 (fall 2025)
-            </p>
-          </div>
-        </div>
-        <div className="flex items-start gap-3">
-          <Globe className="mt-1 h-5 w-5 text-green-500" />
-          <div>
-            <p className="text-foreground text-sm font-medium">Location</p>
-            <p className="text-muted-foreground text-sm">
-              Preferably San Francisco 🇺🇸
-            </p>
-          </div>
-        </div>
-
-        {/* Tech stack */}
-        <div className="flex items-start gap-3 sm:col-span-2">
-          <Code2 className="mt-1 h-5 w-5 text-purple-500" />
-          <div className="w-full">
-            <p className="text-foreground text-sm font-medium">Tech stack</p>
-            <div className="text-muted-foreground grid grid-cols-1 gap-y-1 text-sm sm:grid-cols-2">
-              <ul className="decoration-none list-disc pl-4">
-                <li>Python, Next.js, TypeScript, Tailwind CSS</li>
-                <li>Vercel AI SDK, Supabase, Prisma</li>
-                <li>OpenAI, Mistral, Claude, Whisper</li>
-                <li>Prompt engineering, fine-tuning</li>
-              </ul>
-              <ul className="list-disc pl-4">
-                <li>Weaviate, Pinecone, vector DBs</li>
-                <li>Hugging Face Transformers</li>
-                <li>Tool routing, calling, RAG</li>
-                <li>Hackathons + AI agent workflows</li>
-                <li>
-                  <a
-                    href="http://localhost:3000/chat?query=What%20are%20your%20skills%3F%20Give%20me%20a%20list%20of%20your%20soft%20and%20hard%20skills."
-                    className="cursor-pointer items-center text-blue-500 underline"
-                  >
-                    See more
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      
+      {/* Opportunity Details Grid */}
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 sm:gap-6">
+        <InfoCard
+          icon={BriefcaseBusiness}
+          title="Looking for"
+          value={result.lookingFor}
+        />
+        <InfoCard
+          icon={Users}
+          title="Role"
+          value={result.role}
+        />
+        <InfoCard
+          icon={Calendar}
+          title="Availability"
+          value={result.availability}
+        />
       </div>
-
-      {/* What I bring */}
-      <div className="mt-10">
-        <p className="text-foreground mb-2 text-lg font-semibold">
-          What I bring
+      
+      {/* Call to action */}
+      <div className="mt-10 text-center">
+         <p className="text-foreground text-base mb-4 max-w-xl mx-auto">
+          I'm excited to bring my experience in AI and backend development to a forward-thinking team.
         </p>
-        <p className="text-foreground text-sm">
-          Real-world AI dev experience from Lighton (MCP, secure GPTs, RAG
-          pipelines). 3x hackathon wins (ETH Oxford, Paris Blockchain Week,
-          Colosseum Breakout on Solana). I ship fast, and love building useful
-          things that actually work.
-        </p>
-      </div>
-
-      {/* Goal */}
-      <div className="mt-8">
-        <p className="text-foreground mb-2 text-lg font-semibold">Goal</p>
-        <p className="text-foreground text-sm">
-          Join a bold, innovative team building AI-powered tools that matter. I
-          want to improve fast, contribute hard, and leave a mark. I’m fast,
-          flexible, and HUNGRYYYYY 🔥
-        </p>
-      </div>
-
-      {/* Contact button */}
-      <div className="mt-10 flex justify-center">
         <button
           onClick={openMail}
-          className="rounded-full bg-black px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-zinc-800"
+          className="rounded-full bg-black px-6 py-3 font-semibold text-white transition-colors duration-300 hover:bg-zinc-800 dark:bg-white dark:text-black dark:hover:bg-neutral-200"
         >
           Contact me
         </button>
@@ -135,5 +88,18 @@ const InternshipCard = () => {
     </motion.div>
   );
 };
+
+// Helper component for the info cards
+const InfoCard = ({ icon: Icon, title, value }: { icon: React.ElementType, title: string, value: string }) => (
+  <div className="p-5 rounded-xl bg-background/50 flex-grow flex flex-col h-full">
+    <div className="flex items-center gap-2 text-muted-foreground">
+      <Icon className="h-4 w-4" />
+      <p className="text-sm font-medium">{title}</p>
+    </div>
+    <div className="mt-auto pt-2">
+      <p className="text-lg font-semibold text-foreground break-words">{value}</p>
+    </div>
+  </div>
+);
 
 export default InternshipCard;

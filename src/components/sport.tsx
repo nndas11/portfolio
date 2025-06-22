@@ -1,55 +1,98 @@
 'use client';
 
 import React from 'react';
-import { Photos, PhotoItem } from './photos';
+import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
+import { Badge } from './ui/badge';
 
 const Sports = () => {
-  const sportPhotos: PhotoItem[] = [
+  const techProjects = [
     {
-      src: '/podium.jpg',
-      alt: 'On the podium after a mountain bike race',
-      caption: 'Celebrating a podium finish 3rd at the famous Roc d\'Azur',
+      name: "Live ASL - Sign Language Translator",
+      achievement: "96% accuracy in real-time translation",
+      impact: "Making communication accessible for hearing-impaired individuals",
+      technologies: ["Python", "OpenCV", "Keras", "CNN", "MLRF"],
+      icon: "🤖"
     },
     {
-      src: '/levens.JPG',
-      alt: 'Racing in Levens',
-      caption: 'Competing in the mountain bike world cup in Levens with some clean conditions ahah',
+      name: "ChopServe Platform",
+      achievement: "Spot Award for scalable architecture",
+      impact: "Streamlined retail operations for fresh food delivery",
+      technologies: ["Golang", "GraphQL", "React", "AWS", "Kubernetes"],
+      icon: "🛒"
     },
     {
-      src: '/marseille.JPG',
-      alt: 'Racing in Marseille',
-      caption: 'Pushing limits at the Marseille World cup',
+      name: "Plastico - Waste Management App",
+      achievement: "3rd prize in National Hackathon",
+      impact: "Environmental impact through efficient waste procurement",
+      technologies: ["ReactJS", "NodeJS", "Firebase"],
+      icon: "♻️"
     },
     {
-      src: '/transmo.JPG',
-      alt: 'Racing in the Transmaurienne',
-      caption: 'On the start line for the Transmaurienne Race in the french Alps',
-    },
-    {
-      src: '/ploeuc.jpg',
-      alt: 'Racing in the World Cup',
-      caption: 'French championship in Ploeuc',
-    },
-    {
-      src: '/gueret.jpg',
-      alt: 'Racing in the World Cup',
-      caption: 'World cup in Gueret',
+      name: "ADB Bookmark Feature",
+      achievement: "70% efficiency improvement",
+      impact: "Enhanced mobile device management workflows",
+      technologies: ["Golang", "Android", "ADB", "Kafka"],
+      icon: "📱"
     }
   ];
 
   return (
-    <div className="mx-auto w-full">
+    <div className="mx-auto w-full space-y-6">
       <div className="mb-8">
         <h2 className="text-foreground text-3xl font-semibold md:text-4xl">
-          My Sporting Career
+          My Tech Journey & Projects
         </h2>
         <p className="mt-4 text-muted-foreground">
-          Before focusing on development, I competed at a high level in mountain biking, 
-          reaching Top 15 in the Junior World Cup and Top 10 in French Cup. Here are some highlights from my 
-          athletic journey.
+          From AI-powered accessibility tools to scalable microservices, here are some highlights 
+          from my technical journey and the impact these projects have made.
         </p>
       </div>
-      <Photos photos={sportPhotos} />
+      
+      <div className="grid gap-6 md:grid-cols-2">
+        {techProjects.map((project, index) => (
+          <Card key={index} className="hover:shadow-lg transition-shadow">
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <span className="text-2xl">{project.icon}</span>
+                {project.name}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="space-y-2">
+                <div className="flex items-center gap-2">
+                  <Badge variant="default" className="text-xs">
+                    {project.achievement}
+                  </Badge>
+                </div>
+                <p className="text-sm text-muted-foreground">
+                  {project.impact}
+                </p>
+              </div>
+              
+              <div>
+                <p className="text-xs font-medium text-muted-foreground mb-2">Technologies:</p>
+                <div className="flex flex-wrap gap-1">
+                  {project.technologies.map((tech) => (
+                    <Badge key={tech} variant="outline" className="text-xs">
+                      {tech}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      
+      <Card className="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950 dark:to-indigo-950">
+        <CardContent className="pt-6">
+          <div className="text-center">
+            <p className="text-lg font-medium">
+              🚀 Building systems that scale, code that's maintainable, and solutions that make a difference!
+            </p>
+          </div>
+        </CardContent>
+      </Card>
     </div>
   );
 };

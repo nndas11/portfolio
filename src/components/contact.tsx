@@ -1,87 +1,98 @@
 'use client';
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, Github, Linkedin, Mail, MessageCircle } from 'lucide-react';
+import { LeetCodeIcon } from './ui/leetcode-icon';
 
-export function Contact() {
-  // Contact information
-  const contactInfo = {
-    name: 'Raphael Giraud',
-    email: 'raphaelgiraud12@gmail.com',
-    handle: '@Raphael.Giraud',
-    socials: [
-      {
-        name: 'LinkedIn',
-        url: 'https://www.linkedin.com/in/raphael-giraud-60939519a/',
-      },
-      {
-        name: 'Youtube',
-        url: 'https://www.youtube.com/@toukoum',
-      },
-      {
-        name: 'Instagram',
-        url: 'https://www.instagram.com/raphael.giraud/',
-      },
-      {
-        name: 'Discord',
-        url: 'https://discord.com/users/toukoum',
-      },
-      {
-        name: 'Github',
-        url: 'https://github.com/toukoum',
-      },
-      {
-        name: 'X',
-        url: 'https://x.com/toukoumcode',
-      },
-    ],
-  };
+interface ContactInfo {
+  email: string;
+  location: string;
+  linkedin: string;
+  github: string;
+  leetcode: string;
+  availability: string;
+  preferredContact: string;
+}
 
-  // Function to handle opening links
+export function Contact({ contactInfo }: { contactInfo: ContactInfo }) {
   const openLink = (url: string) => {
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
+  const socials = [
+    { name: 'LinkedIn', url: contactInfo.linkedin, icon: Linkedin },
+    { name: 'Github', url: contactInfo.github, icon: Github },
+    { name: 'LeetCode', url: contactInfo.leetcode, icon: LeetCodeIcon },
+  ].filter(social => social.url && social.url !== 'YOUR_LEETCODE_URL');
+
   return (
-    <div className="mx-auto mt-8 w-full">
-      <div className="bg-accent w-full overflow-hidden rounded-3xl px-6 py-8 font-sans sm:px-10 md:px-16 md:py-12">
+    <div className="mx-auto mt-8 w-full font-sans">
+      <div className="bg-accent w-full overflow-hidden rounded-3xl px-6 py-8 sm:px-10 md:px-16 md:py-12">
         {/* Header Section */}
-        <div className="mb-8 flex flex-col sm:flex-row sm:items-center sm:justify-between">
-          <h2 className="text-foreground text-3xl font-semibold md:text-4xl">
-            Contacts
-          </h2>
-          <span className="mt-2 sm:mt-0">
-            {contactInfo.handle}
+        <div className="mb-8 flex flex-col items-start sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="text-foreground text-3xl font-semibold md:text-4xl">
+              Get In Touch
+            </h2>
+            <p className="text-muted-foreground mt-1">
+              Let's connect and build something great together.
+            </p>
+          </div>
+          <span className="mt-4 sm:mt-0 text-muted-foreground text-sm shrink-0">
+            {contactInfo.location}
           </span>
         </div>
 
-        {/* Email Section */}
-        <div className="mt-8 flex flex-col md:mt-10">
-          <div
-            className="group mb-5 cursor-pointer"
-            onClick={() => openLink(`mailto:${contactInfo.email}`)}
-          >
-            <div className="flex items-center gap-1">
-              <span className="text-base font-medium text-blue-500 hover:underline sm:text-lg">
+        {/* Contact Details */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          {/* Left Column: Email and Socials */}
+          <div className="space-y-6">
+            <div>
+              <p className="text-sm font-semibold mb-2">Email</p>
+              <a
+                href={`mailto:${contactInfo.email}`}
+                className="group inline-flex items-center gap-2 text-base font-medium text-blue-500 hover:underline"
+              >
                 {contactInfo.email}
-              </span>
-              <ChevronRight className="h-5 w-5 text-blue-500 transition-transform duration-300 group-hover:translate-x-1" />
+                <ChevronRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
+              </a>
+            </div>
+
+            <div>
+              <p className="text-sm font-semibold mb-3">Find me on</p>
+              <div className="flex items-center gap-5">
+                {socials.map((social) => (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-foreground transition-colors"
+                    title={social.name}
+                  >
+                    <social.icon className="h-7 w-7" />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Social Links */}
-          <div className="flex flex-wrap gap-x-6 gap-y-5 sm:gap-x-8">
-            {contactInfo.socials.map((social) => (
-              <button
-                key={social.name}
-                className="text-muted-foreground hover:text-foreground cursor-pointer text-sm transition-colors"
-                onClick={() => openLink(social.url)}
-                title={social.name}
-              >
-                {social.name}
-              </button>
-            ))}
+          {/* Right Column: Availability */}
+          <div className="space-y-6">
+             <div className="flex items-start gap-4">
+              <Mail className="h-6 w-6 mt-1 text-muted-foreground shrink-0" />
+              <div>
+                <p className="text-sm font-semibold">Preferred Contact</p>
+                <p className="text-sm text-muted-foreground">{contactInfo.preferredContact}</p>
+              </div>
+            </div>
+             <div className="flex items-start gap-4">
+              <MessageCircle className="h-6 w-6 mt-1 text-muted-foreground shrink-0" />
+              <div>
+                <p className="text-sm font-semibold">Availability</p>
+                <p className="text-sm text-muted-foreground">{contactInfo.availability}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

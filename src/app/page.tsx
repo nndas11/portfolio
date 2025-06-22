@@ -11,18 +11,18 @@ import {
   Layers,
   PartyPopper,
   UserRoundSearch,
+  FileText,
 } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
-import GitHubButton from 'react-github-btn';
 
 /* ---------- quick-question data ---------- */
 const questions = {
   Me: 'Who are you? I want to know more about you.',
   Projects: 'What are your projects? What are you working on right now?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
-  Fun: 'What’s the craziest thing you’ve ever done? What are your hobbies?',
+  Resume: "Can I see your resume? I'd like to review your experience.",
   Contact:
     'How can I reach you? What kind of project would make you say "yes" immediately?',
 } as const;
@@ -31,7 +31,7 @@ const questionConfig = [
   { key: 'Me', color: '#329696', icon: Laugh },
   { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Fun', color: '#B95F9D', icon: PartyPopper },
+  { key: 'Resume', color: '#B95F9D', icon: FileText },
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
 ] as const;
 
@@ -50,7 +50,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'ease', duration: 0.8 },
+      transition: { duration: 0.8 },
     },
   };
   const bottomElementVariants = {
@@ -58,7 +58,7 @@ export default function Home() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { type: 'ease', duration: 0.8, delay: 0.2 },
+      transition: { duration: 0.8, delay: 0.2 },
     },
   };
 
@@ -89,34 +89,21 @@ export default function Home() {
           className="hidden bg-gradient-to-b from-neutral-500/10 to-neutral-500/0 bg-clip-text text-[10rem] leading-none font-black text-transparent select-none sm:block lg:text-[16rem]"
           style={{ marginBottom: '-2.5rem' }}
         >
-          Toukoum
+          Nihad
         </div>
-      </div>
-
-      {/* GitHub button */}
-      <div className="absolute top-6 right-8 z-20">
-        <GitHubButton
-          href="https://github.com/toukoum/portfolio"
-          data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;"
-          data-size="large"
-          data-show-count="true"
-          aria-label="Star toukoum/portfolio on GitHub"
-        >
-          Star
-        </GitHubButton>
       </div>
 
       <div className="absolute top-6 left-6 z-20">
         <button
           onClick={() => goToChat('Are you looking for an internship?')}
-          className="cursor-pointer relative flex items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+          className="cursor-pointer relative flex items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-blue-500 dark:text-white dark:hover:bg-blue-700/20"
         >
-          {/* Green pulse dot */}
+          {/* Blue pulse dot */}
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500"></span>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
           </span>
-          need an intern?
+          Open to Work
         </button>
       </div>
 
@@ -132,7 +119,7 @@ export default function Home() {
         </div>
 
         <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
-          Hey, I'm Raphael 👋
+          Hey, I'm Mohammed Nihad 👋
         </h2>
         <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
           AI portfolio

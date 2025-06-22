@@ -1,4 +1,4 @@
-import { openai } from '@ai-sdk/openai';
+import { google } from '@ai-sdk/google';
 import { streamText } from "ai";
 import { SYSTEM_PROMPT } from './prompt';
 import { getProjects } from './tools/getProjects';
@@ -6,9 +6,9 @@ import { getPresentation } from './tools/getPresentation';
 import { getResume } from './tools/getResume';
 import { getContact } from './tools/getContact';
 import { getSkills } from './tools/getSkills';
-import { getSports } from './tools/getSport';
+import { getSport } from './tools/getSport';
 import { getCrazy } from './tools/getCrazy';
-import { getInternship } from './tools/getIntership';
+import { getInternship } from './tools/getInternship';
 
 export const maxDuration = 30;
 
@@ -39,13 +39,13 @@ export async function POST(req: Request) {
       getResume,
       getContact,
       getSkills,
-      getSports,
+      getSport,
       getCrazy,
       getInternship,
     };
 
     const result = streamText({
-      model: openai("gpt-4o-mini"),
+      model: google('gemini-2.0-flash'),
       messages,
       toolCallStreaming: true,
       tools,

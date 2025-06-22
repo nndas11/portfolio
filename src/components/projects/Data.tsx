@@ -494,3 +494,66 @@ export const data = [
     content: <ProjectContent project={{ title: 'Old Portfolio' }} />,
   },
 ];
+
+export const projects = [
+  {
+    title: 'Live ASL',
+    category: 'Automatic Sign Language Translator',
+    src: 'youbotpreview.png',
+    githubUrl: 'https://github.com/toukoum/you-bot',
+    projectUrl: 'https://you-bot.pages.dev/',
+    description: `Collaboratively designed and implemented an American Sign Language (ASL) interpreter for popular meeting platforms like Zoom and Google Meet, training a multi-layered random forest (MLRF) model on a dataset of over 10,000 phrases. Achieved an accuracy of 96% in translating sign language to text and audio speech.`,
+    tools: [
+      { name: 'Python', icon: '/python.svg' },
+      { name: 'OpenCV', icon: '/opencv.svg' },
+      { name: 'Keras', icon: '/keras.svg' },
+    ],
+    images: [
+      '/youbot1.jpg',
+      '/youbot2.png',
+    ],
+  },
+  {
+    title: 'Plastico',
+    category: 'Mobile Web Application',
+    src: 'transcendancepreview.png',
+    githubUrl: 'https://github.com/toukoum/transcendance',
+    projectUrl: 'https://transcendance.pages.dev/',
+    description: `Played a pivotal role in developing Plastico, a mobile web application that revolutionizes plastic and bio-waste procurement through integrated logistics services, grading systems and tracking functionalities. Leveraged ReactJS for frontend development, with the backend powered by NodeJS. Implemented Firebase as the primary database. Secured 3rd prize in a National-level Hackathon, underscoring project's innovation and environmental impact.`,
+    tools: [
+      { name: 'ReactJS', icon: '/react.svg' },
+      { name: 'NodeJS', icon: '/nodejs.svg' },
+      { name: 'Firebase', icon: '/firebase.svg' },
+    ],
+    images: [
+      '/trans1.png',
+      '/trans2.png',
+      '/trans3.png',
+      '/trans4.png',
+      '/trans5.png',
+      '/trans6.png',
+    ],
+  },
+  {
+    title: 'AutoTrack',
+    category: 'Automatic Attendance System',
+    src: 'syntopreview.png',
+    githubUrl: 'https://github.com/toukoum/synto',
+    projectUrl: 'https://synto.jetzt',
+    description: `Engineered a face recognition system utilizing Convolutional Neural Networks (CNN) in conjunction with OpenCV, achieving an accuracy of 95% across diverse conditions. Developed an user-friendly interface using ReactJS and Flask to streamline the attendance tracking process.`,
+    tools: [
+        { name: 'ReactJS', icon: '/react.svg' },
+        { name: 'Flask', icon: '/flask.svg' },
+        { name: 'Python', icon: '/python.svg' },
+        { name: 'OpenCV', icon: '/opencv.svg' },
+    ],
+    images: [
+      '/synto1.png',
+      '/synto2.png',
+      '/synto3.png',
+      '/synto4.png',
+      '/synto5.png',
+      '/synto6.png',
+    ],
+  },
+];

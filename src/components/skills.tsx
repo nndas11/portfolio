@@ -1,149 +1,186 @@
 'use client';
 
-import { Badge } from '@/components/ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { motion } from 'framer-motion';
-import { Code, Cpu, PenTool, Users } from 'lucide-react';
+import React from 'react';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './ui/card';
+import { Badge } from './ui/badge';
 
-const Skills = () => {
-  const skillsData = [
+export default function Skills() {
+  const skillCategories = [
     {
-      category: 'Frontend Development',
-      icon: <Code className="h-5 w-5" />,
-      skills: [
-        'HTML',
-        'CSS',
-        'JavaScript/TypeScript',
-        'Tailwind CSS',
-        'Bootstrap',
-        'Next.js',
-        'React',
-        'Vercel AI SDK',
-        'Gsap',
-      ],
-      color: 'bg-blue-50 text-blue-600 border border-blue-200',
+      title: 'Programming Languages',
+      icon: '💻',
+      skills: ['Golang', 'Java', 'C++', 'Python', 'TypeScript', 'JavaScript']
     },
     {
-      category: 'Backend & Systems',
-      icon: <Cpu className="h-5 w-5" />,
-      skills: ['Unix', 'C', 'C++', 'Python', 'Git', 'GitHub', 'Docker', 'GCP', 'PostgreSQL'],
-      color: 'bg-emerald-50 text-emerald-600 border border-emerald-200',
+      title: 'Frontend Development',
+      icon: '🎨',
+      skills: ['ReactJS', 'NodeJS', 'Ant Design', 'Responsive UI Design']
     },
     {
-      category: 'Design & Creative Tools',
-      icon: <PenTool className="h-5 w-5" />,
-      skills: ['Figma', 'Davinci Code', 'Illustrator', 'Canva', 'Keynote'],
-      color: 'bg-indigo-50 text-indigo-600 border border-indigo-200',
+      title: 'Backend & APIs',
+      icon: '🔧',
+      skills: ['GraphQL', 'REST APIs', 'Microservices', 'Spring Boot']
     },
     {
-      category: 'Soft Skills',
-      icon: <Users className="h-5 w-5" />,
-      skills: [
-        'Communication',
-        'Problem-Solving',
-        'Adaptability',
-        'Learning Agility',
-        'Teamwork',
-        'Creativity',
-        'Focus',
-      ],
-      color: 'bg-amber-50 text-amber-600 border border-amber-200',
+      title: 'Databases',
+      icon: '🗄️',
+      skills: ['SQL', 'NoSQL', 'Database Design']
     },
+    {
+      title: 'DevOps & Cloud',
+      icon: '☁️',
+      skills: ['AWS', 'Docker', 'Kubernetes', 'ArgoCD', 'GitHub Actions', 'CI/CD']
+    },
+    {
+      title: 'Monitoring & Observability',
+      icon: '📊',
+      skills: ['Grafana', 'Prometheus', 'Loki', 'Fluent Bit']
+    },
+    {
+      title: 'AI & Machine Learning',
+      icon: '🤖',
+      skills: ['OpenCV', 'Keras', 'CNN', 'Random Forest', 'Computer Vision', 'Data Mining']
+    },
+    {
+      title: 'Tools & Platforms',
+      icon: '🛠️',
+      skills: ['Git', 'Eclipse IDE', 'TestNG', 'Bitbucket Pipelines']
+    }
   ];
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  };
+  const softSkills = [
+    'Team Collaboration',
+    'Problem Solving',
+    'Scalable Architecture Design',
+    'Performance Optimization',
+    'Cross-functional Communication',
+    'API Integration',
+    'Infrastructure as Code'
+  ];
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: [0.19, 1, 0.22, 1] },
-    },
-  };
-
-  const badgeVariants = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: { duration: 0.3, ease: 'easeOut' },
-    },
-  };
+  const expertise = [
+    'Full-stack Development',
+    'Microservices Architecture',
+    'DevOps & Cloud Infrastructure',
+    'AI/ML Implementation',
+    'System Optimization',
+    'Mobile App Development',
+    'API Gateway Management'
+  ];
 
   return (
-    <motion.div
-      initial={{ scale: 0.98, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      transition={{ duration: 0.6, ease: [0.19, 1, 0.22, 1] }}
-      className="mx-auto w-full max-w-5xl rounded-4xl"
-    >
-      <Card className="w-full shadow-none border-none pb-12 px-0">
-        <CardHeader className="pb-1 px-0">
-          <CardTitle className="text-primary text-4xl font-bold px-0">
-            Skills & Expertise
+    <div className="space-y-6">
+      {/* Technical Skills */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            🚀 Technical Skills
           </CardTitle>
+          <CardDescription>
+            Technologies and tools I work with
+          </CardDescription>
         </CardHeader>
-
-        <CardContent className='px-0'>
-          <motion.div
-            className="space-y-8 px-0"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {skillsData.map((section, index) => (
-              <motion.div
-                key={index}
-                className="space-y-3 px-0"
-                variants={itemVariants}
-              >
-                <div className="flex items-center gap-2">
-                  {section.icon}
-                  <h3 className="text-accent-foreground text-lg font-semibold">
-                    {section.category}
-                  </h3>
-                </div>
-
-                <motion.div
-                  className="flex flex-wrap gap-2"
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {section.skills.map((skill, idx) => (
-                    <motion.div
-                      key={idx}
-                      variants={badgeVariants}
-                      whileHover={{
-                        scale: 1.04,
-                        transition: { duration: 0.2 },
-                      }}
-                    >
-                      <Badge
-                        className={`border px-3 py-1.5 font-normal`}
-                      >
-                        {skill}
-                      </Badge>
-                    </motion.div>
-                  ))}
-                </motion.div>
-              </motion.div>
-            ))}
-          </motion.div>
+        <CardContent className="space-y-6">
+          {skillCategories.map((category) => (
+            <div key={category.title}>
+              <h3 className="font-semibold mb-3 flex items-center gap-2">
+                {category.icon} {category.title}
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {category.skills.map((skill) => (
+                  <Badge key={skill} variant="default" className="text-sm">
+                    {skill}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+          ))}
         </CardContent>
       </Card>
-    </motion.div>
-  );
-};
 
-export default Skills;
+      {/* Soft Skills */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            🤝 Soft Skills
+          </CardTitle>
+          <CardDescription>
+            Professional competencies and interpersonal skills
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-wrap gap-2">
+            {softSkills.map((skill) => (
+              <Badge key={skill} variant="outline" className="text-sm">
+                {skill}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Areas of Expertise */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            🎯 Areas of Expertise
+          </CardTitle>
+          <CardDescription>
+            Specialized domains and technical focus areas
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div className="flex flex-wrap gap-2">
+            {expertise.map((area) => (
+              <Badge key={area} variant="secondary" className="text-sm">
+                {area}
+              </Badge>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Key Achievements */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            🏆 Key Achievements
+          </CardTitle>
+          <CardDescription>
+            Notable accomplishments and recognitions
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-3">
+          <div className="flex items-start gap-3">
+            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <p className="font-medium">Spot Award at CaptainFresh</p>
+              <p className="text-sm text-muted-foreground">For outstanding individual contribution and scalable designs</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <p className="font-medium">3rd Prize in National Hackathon</p>
+              <p className="text-sm text-muted-foreground">For Plastico project - environmental impact through waste management</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <p className="font-medium">96% Accuracy in AI Model</p>
+              <p className="text-sm text-muted-foreground">Live ASL sign language translator with real-time processing</p>
+            </div>
+          </div>
+          <div className="flex items-start gap-3">
+            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
+            <div>
+              <p className="font-medium">70% Efficiency Improvement</p>
+              <p className="text-sm text-muted-foreground">ADB bookmark feature at Esper for mobile device management</p>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+    </div>
+  );
+}

@@ -1,34 +1,42 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, Code, GraduationCap, Mail, MessageSquare } from 'lucide-react';
+import {
+  Award,
+  BriefcaseBusiness,
+  Code,
+  FileText,
+  GraduationCap,
+  Mail,
+  MessageSquare,
+  Layers,
+  UserRoundSearch,
+  Laugh,
+} from 'lucide-react';
 import React from 'react';
 
 interface ChatLandingProps {
   submitQuery: (query: string) => void;
 }
 
-const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
-  // Suggested questions that the user can click on
-  const suggestedQuestions = [
-    {
-      icon: <MessageSquare className="h-4 w-4" />,
-      text: 'Who are you?',
-    },
-    {
-      icon: <Code className="h-4 w-4" />,
-      text: 'What projects have you worked on?',
-    },
-    {
-      icon: <Award className="h-4 w-4" />,
-      text: 'What are your skills?',
-    },
-    {
-      icon: <Mail className="h-4 w-4" />,
-      text: 'How can I contact you?',
-    },
-  ];
+const questions = {
+  Me: 'Who are you? I want to know more about you.',
+  Projects: 'What are your projects? What are you working on right now?',
+  Skills: 'What are your skills? Give me a list of your soft and hard skills.',
+  Resume: "Can I see your resume? I'd like to review your experience.",
+  Contact:
+    'How can I reach you? What kind of project would make you say "yes" immediately?',
+} as const;
 
+const questionConfig = [
+  { key: 'Me', color: '#329696', icon: Laugh },
+  { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
+  { key: 'Skills', color: '#856ED9', icon: Layers },
+  { key: 'Resume', color: '#B95F9D', icon: FileText },
+  { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
+] as const;
+
+const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
   // Animation variants for staggered animation
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -74,21 +82,37 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
         className="w-full max-w-md space-y-3"
         variants={containerVariants}
       >
-        {suggestedQuestions.map((question, index) => (
-          <motion.button
-            key={index}
-            className="bg-accent hover:bg-accent/80 flex w-full items-center rounded-lg px-4 py-3 transition-colors"
-            onClick={() => submitQuery(question.text)}
-            variants={itemVariants}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            <span className="bg-background mr-3 rounded-full p-2">
-              {question.icon}
-            </span>
-            <span className="text-left">{question.text}</span>
-          </motion.button>
-        ))}
+        {questionConfig.map((item, i) => {
+          const Icon = item.icon;
+          return (
+            <motion.button
+              key={item.key}
+              className="bg-accent hover:bg-accent/80 flex w-full items-center rounded-lg p-4 text-left transition-colors"
+              onClick={() => submitQuery(questions[item.key])}
+              variants={itemVariants}
+              initial="hidden"
+              animate="visible"
+              custom={i}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+            >
+              <span
+                className="mr-4 rounded-full p-2"
+                style={{ backgroundColor: `${item.color}33` }} // 33 for 20% opacity
+              >
+                <Icon className="h-5 w-5" style={{ color: item.color }} />
+              </span>
+              <div>
+                <p className="font-semibold">{item.key}</p>
+                <p className="text-sm text-muted-foreground">
+                  {questions[item.key].length > 40
+                    ? `${questions[item.key].substring(0, 40)}...`
+                    : questions[item.key]}
+                </p>
+              </div>
+            </motion.button>
+          );
+        })}
       </motion.div>
     </motion.div>
   );

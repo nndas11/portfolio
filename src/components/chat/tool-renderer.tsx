@@ -54,7 +54,7 @@ export default function ToolRenderer({
           case 'getContact':
             return (
               <div key={toolCallId} className="w-full rounded-lg">
-                <Contact />
+                <Contact contactInfo={tool.result.contact} />
               </div>
             );
 
@@ -65,7 +65,7 @@ export default function ToolRenderer({
               </div>
             );
 
-          case 'getSports':
+          case 'getSport':
             return (
               <div key={toolCallId} className="w-full rounded-lg">
                 <Sports />
@@ -82,7 +82,7 @@ export default function ToolRenderer({
           case 'getInternship':
             return (
               <div key={toolCallId} className="w-full rounded-lg">
-                <InternshipCard />
+                <InternshipCard tool={tool} />
               </div>
             );
 

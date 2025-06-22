@@ -7,46 +7,22 @@ import React from 'react';
 export function Presentation() {
   // Personal information
   const profile = {
-    name: 'Raphael Giraud',
-    age: '21 years old',
-    location: 'Paris, France',
+    name: 'Mohammed Nihad',
+    age: '25 years old',
+    location: 'San Jose, California',
     // Add a newline character after the emoji
     description:
-      "Hey 👋\nI'm Raph also known as Toukoum. I'm a developer specializing in AI at 42 Paris. I'm working at LightOn AI in Paris. I'm passionate about AI, tech, Entrepreneurship and SaaS tech.",
-    src: '/profil-raph.png',
+      "Hey 👋\nI'm Mohammed Nihad, a Software Engineering graduate student at San Jose State University. I have 3+ years of experience building scalable microservices and DevOps solutions. I'm passionate about AI/ML, backend development with Golang and Java, and creating systems that make a real impact.",
+    src: '/avatar_nihad.jpeg',
     fallbackSrc:
       'https://images.unsplash.com/photo-1610216705422-caa3fcb6d158?q=80&w=3560&auto=format&fit=crop&ixlib=rb-4.0.3',
-  };
-
-  // Animation variants for text elements
-  const textVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: 'easeOut' },
-    },
-  };
-
-  // Animation for the entire paragraph rather than word-by-word
-  const paragraphAnimation = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: 'easeOut',
-        delay: 0.2,
-      },
-    },
   };
 
   return (
     <div className="mx-auto w-full max-w-5xl py-6 font-sans">
       <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2">
         {/* Image section */}
-        <div className="relative mx-auto aspect-square w-full max-w-sm">
+        <div className="relative mx-auto aspect-square w-full max-w-xs">
           <div className="relative h-full w-full overflow-hidden rounded-2xl">
             <motion.div
               initial={{ scale: 0.92, opacity: 0 }}
@@ -57,9 +33,9 @@ export function Presentation() {
               <Image
                 src={profile.src}
                 alt={profile.name}
-                width={500}
-                height={500}
-                className="h-full w-full object-cover object-center"
+                width={600}
+                height={600}
+                className="h-full w-full object-cover object-top"
                 onError={(e) => {
                   // Fallback to placeholder if image fails to load
                   const target = e.target as HTMLImageElement;
@@ -73,9 +49,9 @@ export function Presentation() {
         {/* Text content section */}
         <div className="flex flex-col space-y">
           <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={textVariants}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
           >
             <h1 className="from-foreground to-muted-foreground bg-gradient-to-r bg-clip-text text-xl font-semibold text-transparent md:text-3xl">
               {profile.name}
@@ -88,9 +64,9 @@ export function Presentation() {
           </motion.div>
 
           <motion.p
-            initial="hidden"
-            animate="visible"
-            variants={paragraphAnimation}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             className="text-foreground mt-6 leading-relaxed whitespace-pre-line"
           >
             {profile.description}
@@ -103,7 +79,7 @@ export function Presentation() {
             transition={{ delay: 0.6, duration: 0.5 }}
             className="mt-4 flex flex-wrap gap-2"
           >
-            {['AI', 'Developer', '42 Paris', 'Sport', 'SaaS Builder'].map(
+            {['AI/ML', 'Backend Development', 'DevOps', 'Microservices', 'Golang', 'Java'].map(
               (tag) => (
                 <span
                   key={tag}

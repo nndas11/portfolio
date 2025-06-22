@@ -1,13 +1,17 @@
-
 import { tool } from "ai";
 import { z } from "zod";
 
 
 export const getCrazy = tool({
   description:
-    "This tool will the craziest thing I've ever done. use it when the user ask someting like : 'What the craziest thing you've ever done?'",
+    "This tool returns something interesting or unique about Mohammed Nihad. Use this when users ask about something crazy, interesting, or unique.",
   parameters: z.object({}),
   execute: async () => {
-    return "Above is a photo of Me On top of Mont Blanc, the highest mountain in the Alps and the highest in Europe. I made it with a friends of mine without guide, it was a great experience! You can see the 80km/h of wind on the photo! I made a youtube video of this adventure here: https://www.youtube.com/watch?v=rufGMSgzUOk&ab_channel=Toukoum";
+    return {
+      crazy: {
+        title: "The 96% Accuracy AI Model That Almost Didn't Happen",
+        story: "During my Live ASL project, I was working with a dataset of 10,000+ sign language phrases. The crazy part? I initially thought the 96% accuracy was a bug! I spent an entire weekend debugging what I thought was an error, only to realize the model was actually performing that well. Sometimes the best results are the ones you least expect! 🎯"
+      }
+    };
   },
 });
