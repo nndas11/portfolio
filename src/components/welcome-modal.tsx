@@ -69,7 +69,7 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
             <DialogHeader className="relative flex flex-row items-start justify-between px-8 pt-8 pb-6">
               <div>
                 <DialogTitle className="flex items-center gap-2 text-4xl font-bold tracking-tight">
-                  Welcome to AI Portfolio
+                  Welcome to Nihad's AI Portfolio
                 </DialogTitle>
                 <DialogDescription className="mt-2 text-base">
                   {/*My interactive AI portfolio experience*/}
@@ -92,18 +92,18 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
                 {/* What section */}
                 <div className="space-y-3">
                   <h3 className="text-primary flex items-center gap-2 text-xl font-semibold">
-                    What's ????
+                    What is this??
                   </h3>
                   <p className="text-accent-foreground text-base leading-relaxed">
                     I'm so excited to present my{' '}
                     <strong>brand new AI Portfolio.</strong>
-                    <br /> Whether you're a recruiter, a friend, family member,
-                    or just curious, feel free to ask anything you want!
+                    <br /> Whether you're a <strong> recruiter, developer </strong>
+                    or just curious, feel free to ask anything you want to know about my past experiences, projects, skills and intresets....
                   </p>
                 </div>
 
                 {/* Why section */}
-                <div className="space-y-3">
+                {/* <div className="space-y-3">
                   <h3 className="text-primary flex items-center gap-2 text-xl font-semibold">
                     Why ???
                   </h3>
@@ -116,7 +116,7 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
                       work.
                     </strong>
                   </p>
-                </div>
+                </div> */}
               </section>
             </div>
 

@@ -100,9 +100,11 @@ export default function RootLayout({
             <a href="https://linkedin.com/in/mohammed-nihad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <Linkedin className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" />
             </a>
+            {/* TODO */}
             <a href="YOUR_LEETCODE_URL" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
               <LeetCodeIcon className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" fill="currentColor" />
             </a>
+            {/* TODO */}
             <a
               href="/resume_giraud.pdf"
               download="Mohammed_Nihad_Resume.pdf"

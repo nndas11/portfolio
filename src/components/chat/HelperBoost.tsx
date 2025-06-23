@@ -16,6 +16,7 @@ import {
   ChevronUp,
   CircleEllipsis,
   CodeIcon,
+  FileText,
   GraduationCapIcon,
   Laugh,
   Layers,
@@ -37,16 +38,16 @@ const questions = {
   Me: 'Who are you? I want to know more about you.',
   Projects: 'What are your projects? What are you working on right now?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
-  Fun: "What the craziest thing you've ever done? (mb?) What are your hobbies? ",
+  Resume: "Can I see your resume? ",
   Contact:
     'How can I reach you? What kind of project would make you say "yes" immediately?',
 };
 
 const questionConfig = [
   { key: 'Me', color: '#329696', icon: Laugh },
+  { key: 'Resume', color: '#B95F9D', icon: FileText },
   { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Fun', color: '#B95F9D', icon: PartyPopper },
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
 ];
 
@@ -97,7 +98,7 @@ const questionsByCategory = [
     icon: GraduationCapIcon,
     questions: [
       'What are your skills?',
-      'How was your experience at École 42?',
+      'Tell me about your technical skills?'
     ],
   },
   {
@@ -105,10 +106,8 @@ const questionsByCategory = [
     name: 'Fun',
     icon: PartyPopper,
     questions: [
-      'Mountain Bike you said?? Show me!',
-      "What's the craziest thing you've ever done?",
+      'What are your hobbies?',
       'Mac or PC?',
-      'What are you certain about that 90% get wrong?',
     ],
   },
   {
@@ -117,6 +116,8 @@ const questionsByCategory = [
     icon: MailIcon,
     questions: [
       'How can I reach you?',
+      'Are you intrested in an intenship?',
+      'Are you open to work',
       "What kind of project would make you say 'yes' immediately?",
       'Where are you located?',
     ],

@@ -20,7 +20,7 @@ import { useEffect, useRef, useState } from 'react';
 /* ---------- quick-question data ---------- */
 const questions = {
   Me: 'Who are you? I want to know more about you.',
-  Projects: 'What are your projects? What are you working on right now?',
+  Projects: 'What are your projects? What have you worked on in your past work experience?',
   Skills: 'What are your skills? Give me a list of your soft and hard skills.',
   Resume: "Can I see your resume? I'd like to review your experience.",
   Contact:
@@ -29,9 +29,9 @@ const questions = {
 
 const questionConfig = [
   { key: 'Me', color: '#329696', icon: Laugh },
+  { key: 'Resume', color: '#B95F9D', icon: FileText },
   { key: 'Projects', color: '#3E9858', icon: BriefcaseBusiness },
   { key: 'Skills', color: '#856ED9', icon: Layers },
-  { key: 'Resume', color: '#B95F9D', icon: FileText },
   { key: 'Contact', color: '#C19433', icon: UserRoundSearch },
 ] as const;
 
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
 
         <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
-          Hey, I'm Mohammed Nihad 👋
+          Hey, I'm Nihad 👋
         </h2>
         <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
           AI portfolio
@@ -190,6 +190,7 @@ export default function Home() {
           ))}
         </div>
       </motion.div>
+      {/* Background animation -> of fluid design */}
       <FluidCursor />
     </div>
   );

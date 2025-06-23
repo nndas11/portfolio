@@ -16,9 +16,10 @@ import {
   ChatBubbleMessage,
 } from '@/components/ui/chat/chat-bubble';
 import WelcomeModal from '@/components/welcome-modal';
-import { Info } from 'lucide-react';
+import { Download, Github, Info, Linkedin } from 'lucide-react';
 import GitHubButton from 'react-github-btn';
 import HelperBoost from './HelperBoost';
+import { LeetCodeIcon } from '../ui/leetcode-icon';
 
 // ClientOnly component for client-side rendering
 //@ts-ignore
@@ -277,16 +278,17 @@ const Chat = () => {
   return (
     <div className="relative h-screen overflow-hidden">
       <div className="absolute top-6 right-8 z-51 flex flex-col-reverse items-center justify-center gap-1 md:flex-row">
-        <WelcomeModal
+        {/* <WelcomeModal
           trigger={
             <div className=" hover:bg-accent cursor-pointer rounded-2xl px-3 py-1.5">
-              <Info className="text-accent-foreground h-8" />
+              <Info className="text-accent h-8" />
             </div>
           }
-        />
-        <div className="pt-2">
+        /> */}
+
+        {/* <div className="pt-2">
           <GitHubButton
-            href="https://github.com/toukoum/portfolio"
+            href="https://github.com/toukoum/portfasdsadolio"
             data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;"
             data-size="large"
             data-show-count="true"
@@ -294,8 +296,33 @@ const Chat = () => {
           >
             Star
           </GitHubButton>
-        </div>
+        </div> */}
+
+<div className="absolute top-6 right-8 z-20 flex items-center gap-4">
+            <a href="https://github.com/mohammed-nihad" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <Github className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" />
+            </a>
+            <a href="https://linkedin.com/in/mohammed-nihad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Linkedin className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" />
+            </a>
+            {/* TODO */}
+            <a href="YOUR_LEETCODE_URL" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
+              <LeetCodeIcon className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" fill="currentColor" />
+            </a>
+            {/* TODO */}
+            <a
+              href="/resume_giraud.pdf"
+              download="Mohammed_Nihad_Resume.pdf"
+              className="flex items-center gap-2 rounded-full border bg-white/30 px-3 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+              aria-label="Download Resume"
+            >
+              <Download className="h-4 w-4" />
+              Resume
+            </a>
+          </div>
       </div>
+
+
 
       {/* Fixed Avatar Header with Gradient */}
       <div

@@ -70,7 +70,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
       {/* Welcome message */}
       <motion.div className="mb-8 text-center" variants={itemVariants}>
         <h2 className="mb-3 text-2xl font-semibold">
-            I'm Raphael's digital twin
+            I'm here to answer your query...
         </h2>
         <p className="text-muted-foreground mx-auto max-w-md">
           The first portfolio that fit YOU needs.
@@ -89,7 +89,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
               key={item.key}
               className="bg-accent hover:bg-accent/80 flex w-full items-center rounded-lg p-4 text-left transition-colors"
               onClick={() => submitQuery(questions[item.key])}
-              variants={itemVariants}
+              // variants={itemVariants}
               initial="hidden"
               animate="visible"
               custom={i}
