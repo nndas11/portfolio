@@ -10,7 +10,7 @@ import { Badge } from './ui/badge';
 export function Resume() {
   // TODO: Replace this with your actual resume details
   const resumeDetails = {
-    title: "[YOUR_NAME]'s Resume",
+    title: "Nihad's Resume",
     description: '[YOUR_ROLE] • [YOUR_SPECIALIZATION]',
     fileType: 'PDF',
     lastUpdated: '[LAST_UPDATED_DATE]',
@@ -46,6 +46,16 @@ export function Resume() {
             </div>
             <p className="text-sm text-muted-foreground mb-1">Masters in Software Engineering</p>
             <p className="text-sm text-muted-foreground">San Jose, California</p>
+            <div className="mt-2">
+              <p className="text-sm text-muted-foreground">Relevant Coursework:</p>
+              <div className="flex flex-wrap gap-1 mt-1">
+                {['Data Mining', 'Advanced Data Structures & Algorithms', 'Computer Netwrok', 'Machine Learning', 'Enterpiose Distributed Systems'].map((course) => (
+                  <Badge key={course} variant="outline" className="text-xs">
+                    {course}
+                  </Badge>
+                ))}
+              </div>
+            </div>
           </div>
           
           <div>
@@ -65,6 +75,67 @@ export function Resume() {
                   </Badge>
                 ))}
               </div>
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+      {/* Skills Section */}
+      <Card>
+        <CardHeader>
+          <CardTitle className="flex items-center gap-2">
+            🛠️ Skills
+          </CardTitle>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          <div>
+            <h4 className="font-semibold mb-1 text-sm">Programming Languages</h4>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {['Java', 'Python', 'Go', 'SQL', 'C++', 'JavaScript', 'TypeScript'].map((skill) => (
+                <Badge key={skill} variant="outline" className="text-xs">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1 text-sm">Frameworks & Libraries</h4>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {['Spring Boot', 'Gin Framework', 'Next.js', 'Flask', 'GraphQL', 'Redux'].map((skill) => (
+                <Badge key={skill} variant="outline" className="text-xs">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1 text-sm">Tools & Platforms</h4>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {['Vercel', 'Firebase', 'AWS', 'Docker', 'Kubernetes', 'Git', 'CI/CD', 'ArgoCD', 'Prometheus', 'Grafana'].map((skill) => (
+                <Badge key={skill} variant="outline" className="text-xs">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1 text-sm">AI & Data</h4>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {['LLM Prompt Engineering', 'Machine Learning', 'OpenCV', 'CNN', 'Random Forest', 'Data Visualization', 'SQL Generation'].map((skill) => (
+                <Badge key={skill} variant="outline" className="text-xs">
+                  {skill}
+                </Badge>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h4 className="font-semibold mb-1 text-sm">Soft Skills</h4>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {['Team Collaboration', 'Problem Solving', 'Communication', 'Agile', 'Mentoring'].map((skill) => (
+                <Badge key={skill} variant="outline" className="text-xs">
+                  {skill}
+                </Badge>
+              ))}
             </div>
           </div>
         </CardContent>
@@ -158,57 +229,111 @@ export function Resume() {
           </CardTitle>
         </CardHeader>
         <CardContent className="space-y-4">
-          {/* Live ASL */}
+          {/* AI Portfolio */}
           <div>
-            <h3 className="font-semibold mb-1">Live ASL - Automatic Sign Language Translator</h3>
-            <p className="text-sm text-muted-foreground mb-2">American Sign Language interpreter for meeting platforms</p>
+            <h3 className="font-semibold mb-1">AI Portfolio | Interactive AI-Powered Resume</h3>
+            <p className="text-sm text-muted-foreground mb-2">Dynamic AI-based portfolio with chatbot for real-time recruiter interaction</p>
             <div className="flex flex-wrap gap-1 mb-2">
-              {['Python', 'OpenCV', 'Keras', 'CNN', 'MLRF'].map((tech) => (
+              {['Next.js', 'TypeScript', 'Vercel', 'LLM Integration', 'Prompt Engineering', 'AI Chatbot'].map((tech) => (
                 <Badge key={tech} variant="outline" className="text-xs">
                   {tech}
                 </Badge>
               ))}
             </div>
             <ul className="space-y-1 text-sm">
-              <li>• 96% accuracy in sign language to text/audio translation</li>
-              <li>• Trained on 10,000+ phrases dataset</li>
-              <li>• Real-time processing for video conferencing</li>
+              <li>• Enables recruiters to interactively explore projects, experience, and skills</li>
+              <li>• Uses LLM-based prompt engineering for automated profile exploration</li>
+              <li>• Deployed on Vercel for seamless performance and scalability</li>
+            </ul>
+          </div>
+
+          {/* TalkWithYourDB */}
+          <div>
+            <h3 className="font-semibold mb-1">TalkWithYourDB | Natural Language Database Query Tool</h3>
+            <p className="text-sm text-muted-foreground mb-2">Web app for querying any database using natural language</p>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {['Next.js', 'TypeScript', 'Vercel', 'AI Prompt Engineering', 'SQL Generation', 'Database Connectivity'].map((tech) => (
+                <Badge key={tech} variant="outline" className="text-xs">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+            <ul className="space-y-1 text-sm">
+              <li>• Converts user questions into SQL queries using AI</li>
+              <li>• Supports multiple database types and secure query execution</li>
+              <li>• Empowers non-technical users to access data easily</li>
+            </ul>
+          </div>
+
+          {/* Live ASL */}
+          <div>
+            <h3 className="font-semibold mb-1">Live ASL | Automatic Sign Language Translator</h3>
+            <p className="text-sm text-muted-foreground mb-2">ASL interpreter using multi-layered random forest model</p>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {['Machine Learning', 'Multi-layered Random Forest', 'Computer Vision', 'Python', 'OpenCV'].map((tech) => (
+                <Badge key={tech} variant="outline" className="text-xs">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+            <ul className="space-y-1 text-sm">
+              <li>• Achieved 96% translation accuracy on 10,000+ phrases</li>
+              <li>• Real-time sign language to text/audio translation</li>
+              <li>• Improves accessibility for hearing-impaired users</li>
             </ul>
           </div>
 
           {/* Plastico */}
           <div>
-            <h3 className="font-semibold mb-1">Plastico - Mobile Web Application</h3>
-            <p className="text-sm text-muted-foreground mb-2">Waste procurement platform with logistics integration</p>
+            <h3 className="font-semibold mb-1">Plastico | Mobile Web Application</h3>
+            <p className="text-sm text-muted-foreground mb-2">Mobile app for plastic and bio-waste procurement with logistics</p>
             <div className="flex flex-wrap gap-1 mb-2">
-              {['ReactJS', 'NodeJS', 'Firebase'].map((tech) => (
+              {['ReactJS', 'NodeJS', 'Firebase', 'Mobile Web App', 'Logistics Integration'].map((tech) => (
                 <Badge key={tech} variant="outline" className="text-xs">
                   {tech}
                 </Badge>
               ))}
             </div>
             <ul className="space-y-1 text-sm">
-              <li>• 3rd prize in National-level Hackathon</li>
-              <li>• Integrated logistics services and grading systems</li>
-              <li>• Environmental impact through efficient waste management</li>
+              <li>• Won 3rd prize at a National Hackathon</li>
+              <li>• Integrated logistics, grading, and tracking for waste management</li>
+              <li>• Demonstrated innovation in environmental technology</li>
             </ul>
           </div>
 
           {/* AutoTrack */}
           <div>
-            <h3 className="font-semibold mb-1">AutoTrack - Automatic Attendance System</h3>
-            <p className="text-sm text-muted-foreground mb-2">Face recognition system for attendance tracking</p>
+            <h3 className="font-semibold mb-1">AutoTrack | Automatic Attendance System</h3>
+            <p className="text-sm text-muted-foreground mb-2">CNN-based face recognition system for attendance</p>
             <div className="flex flex-wrap gap-1 mb-2">
-              {['Python', 'OpenCV', 'CNN', 'ReactJS', 'Flask'].map((tech) => (
+              {['CNN', 'OpenCV', 'ReactJS', 'Flask', 'Face Recognition'].map((tech) => (
                 <Badge key={tech} variant="outline" className="text-xs">
                   {tech}
                 </Badge>
               ))}
             </div>
             <ul className="space-y-1 text-sm">
-              <li>• 95% accuracy across diverse conditions</li>
-              <li>• User-friendly interface for attendance management</li>
+              <li>• Achieved 95% accuracy in automated attendance tracking</li>
+              <li>• Integrated ReactJS and Flask for a user-friendly interface</li>
               <li>• Real-time face detection and recognition</li>
+            </ul>
+          </div>
+
+          {/* ChopServe */}
+          <div>
+            <h3 className="font-semibold mb-1">ChopServe | Omnichannel Retail Platform</h3>
+            <p className="text-sm text-muted-foreground mb-2">Golang and GraphQL-powered platform for multi-channel retail</p>
+            <div className="flex flex-wrap gap-1 mb-2">
+              {['Golang', 'GraphQL', 'Omnichannel Retail', 'Multi-channel Sales', 'API Development'].map((tech) => (
+                <Badge key={tech} variant="outline" className="text-xs">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+            <ul className="space-y-1 text-sm">
+              <li>• Enabled seamless retail sales of fish, seafood, and meat</li>
+              <li>• Built scalable APIs for omnichannel management</li>
+              <li>• Improved customer experience across sales channels</li>
             </ul>
           </div>
         </CardContent>
