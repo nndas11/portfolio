@@ -2,338 +2,111 @@ import Image from 'next/image';
 import { Image as Img } from 'lucide-react';
 import { ChevronRight, Link } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
-import { url } from 'inspector';
 
 // Enhanced project content array with all projects
 const PROJECT_CONTENT = [
   {
-    title: 'Synto',
+    title: 'AI Portfolio | Interactive AI-Powered Resume',
     description:
-      'Synto is an AI-powered interface that transforms complex blockchain interactions into simple, natural language commands. Whether you want to send tokens, stake assets, swap coins, or even create NFTs or liquidity pools, just tell Synto what to do — no manual wallet interactions, no technical jargon. One of my biggest projects yet',
+      'Developed a dynamic AI-based portfolio enabling recruiters to interact with a chatbot and inquire about my projects, experience, skills, and resume in real time. Integrated LLM-based prompt engineering and deployed using Next.js, TypeScript, and Vercel for seamless performance and scalability. Enhanced candidate experience by enabling automated profile exploration, reducing manual review time for recruiters.',
     techStack: [
       'Next.js',
-      'TailwindCSS',
-      'Web3.js',
-      'shadcn-ui',
       'TypeScript',
-      'Phantom Wallet',
-      'OpenAI API',
-      'Vercel AI SDK',
-      'Solana Agent kit',
-      'Neon',
-      'Prisma'
+      'Vercel',
+      'LLM Integration',
+      'Prompt Engineering',
+      'AI Chatbot',
+      'Real-time Interaction',
+      'Scalable Architecture'
     ],
-    date: '2025',
-    links: [
-      {
-        name: 'website',
-        url: 'https://synto.fun',
-      },
-      {
-        name: 'Launch Video',
-        url: 'https://www.youtube.com/watch?v=4QUE2KgKDUw',
-      },
-      {
-        name: 'X',
-        url: 'https://x.com/chainSynto',
-      },
-      {
-        name: 'Technical Video',
-        url: 'https://www.youtube.com/watch?v=1CjBLKPUwtA&feature=youtu.be',
-      },
-      {
-        name: 'Pitch Deck',
-        url: 'https://drive.google.com/file/d/1B3m44mEgv81rJHfjNfTKi147yX4raQed/view?usp=sharing',
-      },
-      {
-        name: 'Usage tutorial',
-        url: 'https://www.youtube.com/watch?v=PRu1cfvT2bA',
-      }
-    ],
-    images: [
-      {
-        src: '/synto1.png',
-        alt: 'Synto landing page',
-      },
-      {
-        src: '/synto2.png',
-        alt: 'Synto chat interface',
-      },
-      {
-        src: '/synto3.png',
-        alt: 'Synto chat interface',
-      },
-      {
-        src: '/synto4.png',
-        alt: 'Synto chat interface',
-      },
-      {
-        src: '/synto5.png',
-        alt: 'Synto chat interface',
-      },
-      {
-        src: '/synto6.png',
-        alt: 'Synto chat interface',
-      },
-    ],
-  },
-  {
-    title: 'Rrate',
-    description:
-      "Rrate is a fun website to allow user to compare his salary with the richest people in the world. Try it now it's online!",
-    techStack: ['Html', 'Css', 'Javascript'],
     date: '2024',
-    links: [
-      {
-        name: 'website',
-        url: 'https://rrate.app',
-      },
-      {
-        name: 'github',
-        url: 'https://github.com/toukoum/Rrate',
-      },
-    ],
-    images: [
-      {
-        src: '/rrate1.png',
-        alt: 'Rrate landing page',
-      },
-      {
-        src: '/rrate2.png',
-        alt: 'Rrate comparison page',
-      },
-      {
-        src: '/rrate3.png',
-        alt: 'Rrate comparison page',
-      },
-    ],
+    category: 'AI-Powered Web Application'
   },
   {
-    title: 'Defai',
+    title: 'TalkWithYourDB | Natural Language Database Query Tool',
     description:
-      "We Win ETHOXford hackathon by building DEFAI. DEFAI stands for Decentralized Finance Artificial Intelligence. It's an AI-powered chat interface that simplifies on-chain operations on the Avalanche blockchain by allowing users to interact using natural language. This makes complex DeFi operations accessible even for those with limited technical expertise.",
+      'Engineered a web application that allows users to connect to any database via connection string and query it using natural language. Implemented backend intelligence with AI-powered prompt engineering to convert user queries into SQL, enabling data access without technical expertise. Built with Next.js, TypeScript, and deployed on Vercel, supporting multiple database types and secure query execution.',
     techStack: [
       'Next.js',
-      'TailwindCSS',
-      'shadcn-ui',
-      'Vercel AI SDK',
       'TypeScript',
+      'Vercel',
+      'AI Prompt Engineering',
+      'SQL Generation',
+      'Database Connectivity',
+      'Natural Language Processing',
+      'Secure Query Execution'
     ],
-    date: '2025',
-    links: [
-      {
-        name: 'website',
-        url: 'https://dorahacks.io/buidl/22605',
-      },
-      {
-        name: 'github',
-        url: 'https://github.com/toukoum/DEFAI',
-      },
-      {
-        name: 'LinkedIn',
-        url: 'https://www.linkedin.com/feed/update/urn:li:activity:7299337190151483392/',
-      },
-      {
-        name: 'Youtube Video',
-        url: 'https://www.youtube.com/watch?v=N9O7los4-ng&t=34s&ab_channel=Toukoum',
-      }
-    ],
-    images: [
-      {
-        src: '/defai1.png',
-        alt: 'Landing Page of Defai',
-      },
-      {
-        src: '/defai2.png',
-        alt: 'Confirmation popup of Defai',
-      },
-      {
-        src: '/defai3.png',
-        alt: 'Chatbot of Defai',
-      },
-      {
-        src: '/defai4.jpeg',
-        alt: 'Winner team',
-      },
-    ],
-  },
-  {
-    title: 'Fitgear',
-    description:
-      'Won the Gotta Go Hack IA by building Fitgear, a virtual voice seller accessible by QR code to improve the ratio between customers and sellers. Created an AI pipeline with API calls and a RAG system for natural language interactions.',
-    techStack: ['Next.js', 'TailwindCSS', 'OpenAI API', 'Langchain'],
     date: '2024',
-    links: [
-      {
-        name: 'Linkedin',
-        url: 'https://www.linkedin.com/posts/raphael-giraud-60939519a_hackathon-innovation-sporttech-activity-7210399263774674946-qSXq?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAC6vwikBVSEkS7XWktWS7y6GR3GHwAlKslc',
-      },
-    ],
-    images: [
-      {
-        src: '/fitgear2.png',
-        alt: 'Fitgear chatbot',
-      },
-      {
-        src: '/fitgear1.png',
-        alt: 'Fitgear landing page',
-      },
-    ],
+    category: 'AI-Powered Database Tool'
   },
   {
-    title: 'Datai',
+    title: 'Live ASL | Automatic Sign Language Translator',
     description:
-      "DATAI is an AI-powered agent that lets non-technical users query a database using natural language without writing SQL. Built using Next.js, TailwindCSS, shadcn-ui, and Anthropic's Claude API, this project focuses on simplicity, speed, and user-friendly design.",
+      'Designed and implemented an ASL interpreter using a multi-layered random forest model trained on 10,000+ phrases, achieving 96% translation accuracy. The system provides real-time sign language translation, making communication accessible for hearing-impaired individuals.',
     techStack: [
-      'Next.js',
-      'TailwindCSS',
-      'shadcn-ui',
-      'Claude API',
-      'TypeScript',
+      'Machine Learning',
+      'Multi-layered Random Forest',
+      'Computer Vision',
+      'Python',
+      'OpenCV',
+      'Real-time Processing',
+      'Accessibility Technology',
+      'High Accuracy Model'
     ],
-    date: '2024',
-    links: [
-      {
-        name: 'GitHub',
-        url: 'https://github.com/toukoum/datai',
-      },
-      {
-        name: 'Youtube Video Demo',
-        url: 'https://youtu.be/iE0RXjdbQsw',
-      }
-    ],
-    images: [
-      {
-        src: '/datai1.png',
-        alt: 'Datai landing page',
-      },
-      {
-        src: '/datai2.png',
-        alt: 'Datai chatbot',
-      },
-      {
-        src: '/datai3.png',
-        alt: 'Datai chatbot',
-      },
-      {
-        src: '/datai4.png',
-        alt: 'Datai chatbot',
-      }
-    ],
-  },
-  {
-    title: '3d Pong Game',
-    description:
-      "Transcendance is the final project of my 42 cursus. It's a 3D pong game with multiplayer capabilities, user authentication, and real-time gameplay. We had to do everything from scratch, so it was pretty challenging and we learned a lot.",
-    techStack: ['Django', 'Python', 'JavaScript', 'Websockets', 'PostgreSQL', 'Docker', 'Nginx', 'Web3', 'Solidity'],
     date: '2023',
-    links: [
-      {
-        name: 'GitHub',
-        url: 'https://github.com/toukoum/Transcendance',
-      },
-    ],
-    images: [
-      {
-        src: '/trans1.png',
-        alt: 'Transcendance landing page',
-      },
-      {
-        src: '/trans2.png',
-        alt: 'Transcendance game',
-      },
-      {
-        src: '/trans3.png',
-        alt: 'Transcendance game',
-      },
-      {
-        src: '/trans4.png',
-        alt: 'Transcendance game',
-      },
-      {
-        src: '/trans5.png',
-        alt: 'Transcendance game',
-      },
-      {
-        src: '/trans6.png',
-        alt: 'Transcendance game',
-      }
-
-    ],
+    category: 'Machine Learning Application'
   },
   {
-    title: 'Minishell',
+    title: 'Plastico | Mobile Web Application',
     description:
-      "Minishell is a project that aims to create a simple shell. It's a great introduction to process creation and management in C, offering fundamental Unix command-line functionality. This was a very challenging project, but I learned a lot from it.",
-    techStack: ['C', 'Unix', 'Bash'],
+      'Developed Plastico, a mobile web app streamlining plastic and bio-waste procurement with logistics, grading, and tracking using ReactJS, NodeJS, and Firebase. The application won 3rd prize at a National Hackathon, demonstrating innovation in environmental technology and waste management solutions.',
+    techStack: [
+      'ReactJS',
+      'NodeJS',
+      'Firebase',
+      'Mobile Web App',
+      'Logistics Integration',
+      'Grading System',
+      'Tracking Functionality',
+      'Environmental Technology'
+    ],
     date: '2023',
-    links: [
-      {
-        name: 'GitHub',
-        url: 'https://github.com/toukoum/Michelle-42',
-      },
-    ],
-    images: [
-      {
-        src: '/minishell1.png',
-        alt: 'Minishell landing page',
-      }
-    ],
+    category: 'Mobile Web Application'
   },
   {
-    title: 'YouBot',
+    title: 'AutoTrack | Automatic Attendance System',
     description:
-      'YouBot is a Python Bot that Scrapes Videos from Pexels, adds a random song from a Songs Folder, then auto-uploads the videos to your YouTube Channel for continuous content generation.',
-    techStack: ['Python', 'YouTube API', 'Pexels API'],
-    date: '2022',
-    links: [
-      {
-        name: "YouTube Video",
-        url: "https://youtu.be/vp1v5mBG7rA "
-      },
-      {
-        name: 'GitHub',
-        url: 'https://github.com/toukoum/YouBot',
-      }
+      'Built a CNN-based face recognition system with 95% accuracy using OpenCV, integrating it with a ReactJS and Flask interface for seamless attendance tracking. The system provides automated attendance management with high precision and user-friendly interface.',
+    techStack: [
+      'CNN (Convolutional Neural Networks)',
+      'OpenCV',
+      'ReactJS',
+      'Flask',
+      'Face Recognition',
+      'Python',
+      'High Accuracy System',
+      'Automated Tracking'
     ],
-    images: [
-      {
-        src: '/youbot1.jpg',
-        alt: 'Youbot landing page',
-      },
-      {
-        src: '/youbot2.png',
-        alt: 'Youbot chatbot',
-      },
-    ],
+    date: '2023',
+    category: 'Computer Vision Application'
   },
   {
-    title: 'Old Portfolio',
+    title: 'ChopServe | Omnichannel Retail Platform',
     description:
-      'My previous traditional portfolio built with vanilla HTML, CSS and JS with GSAP animations for a smooth and interactive user experience.',
-    techStack: ['HTML', 'CSS', 'JavaScript', 'GSAP'],
-    date: '2022',
-    links: [
-      {
-        name: 'Website',
-        url: 'https://toukoum.github.io/oldPortfolio/',
-      },
-      {
-        name: 'GitHub',
-        url: 'https://github.com/toukoum/portfolio',
-      },
+      'Developed ChopServe, a Golang and GraphQL-powered platform enabling multi-channel retail sales of fish, seafood, and meat. The platform provides comprehensive retail management with omnichannel capabilities for seamless customer experience across different sales channels.',
+    techStack: [
+      'Golang',
+      'GraphQL',
+      'Omnichannel Retail',
+      'Multi-channel Sales',
+      'Retail Platform',
+      'API Development',
+      'Scalable Architecture',
+      'E-commerce Integration'
     ],
-    images: [
-      {
-        src: '/oldport1.png',
-        alt: 'Old Portfolio landing page',
-      },
-      {
-        src: '/oldport2.png',
-        alt: 'Old Portfolio projects',
-      }
-    ],
-  },
+    date: '2023',
+    category: 'Retail Platform'
+  }
 ];
 
 // Define interface for project prop
@@ -342,8 +115,7 @@ interface ProjectProps {
   description?: string;
   techStack?: string[];
   date?: string;
-  links?: { name: string; url: string }[];
-  images?: { src: string; alt: string }[];
+  category?: string;
 }
 
 const ProjectContent = ({ project }: { project: ProjectProps }) => {
@@ -355,12 +127,17 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
   }
 
   return (
-    <div className="space-y-10">
+    <div className="space-y-8">
       {/* Header section with description */}
       <div className="rounded-3xl bg-[#F5F5F7] p-8 dark:bg-[#1D1D1F]">
         <div className="space-y-6">
-          <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
-            <span>{projectData.date}</span>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-2 text-sm text-neutral-500 dark:text-neutral-400">
+              <span>{projectData.date}</span>
+            </div>
+            <span className="rounded-full bg-blue-100 px-3 py-1 text-xs font-medium text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+              {projectData.category}
+            </span>
           </div>
 
           <p className="text-secondary-foreground font-sans text-base leading-relaxed md:text-lg">
@@ -370,7 +147,7 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
           {/* Tech stack */}
           <div className="pt-4">
             <h3 className="mb-3 text-sm tracking-wide text-neutral-500 uppercase dark:text-neutral-400">
-              Technologies
+              Technologies Used
             </h3>
             <div className="flex flex-wrap gap-2">
               {projectData.techStack.map((tech, index) => (
@@ -385,54 +162,6 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
           </div>
         </div>
       </div>
-
-      {/* Links section */}
-      {projectData.links && projectData.links.length > 0 && (
-        <div className="mb-24">
-          <div className="px-6 mb-4 flex items-center gap-2">
-            <h3 className="text-sm tracking-wide text-neutral-500 dark:text-neutral-400">
-              Links
-            </h3>
-            <Link className="text-muted-foreground w-4" />
-          </div>
-          <Separator className="my-4" />
-          <div className="space-y-3">
-            {projectData.links.map((link, index) => (
-                <a
-                key={index}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group bg-[#F5F5F7] flex items-center justify-between rounded-xl p-4 transition-colors hover:bg-[#E5E5E7] dark:bg-neutral-800 dark:hover:bg-neutral-700"
-                >
-                <span className="font-light capitalize">{link.name}</span>
-                <ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </a>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Images gallery */}
-      {projectData.images && projectData.images.length > 0 && (
-        <div className="space-y-6">
-          <div className="grid grid-cols-1 gap-4">
-            {projectData.images.map((image, index) => (
-              <div
-                key={index}
-                className="relative aspect-video overflow-hidden rounded-2xl"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  fill
-                  className="object-cover transition-transform"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 };
@@ -440,120 +169,108 @@ const ProjectContent = ({ project }: { project: ProjectProps }) => {
 // Main data export with updated content
 export const data = [
   {
-    category: 'Startup Project',
-    title: 'Synto',
-    src: '/syntopreview.png',
-    content: <ProjectContent project={{ title: 'Synto' }} />,
+    category: 'AI-Powered Web Application',
+    title: 'AI Portfolio | Interactive AI-Powered Resume',
+    content: <ProjectContent project={{ title: 'AI Portfolio | Interactive AI-Powered Resume' }} />,
   },
   {
-    category: 'Fun Tool',
-    title: 'Rrate',
-    src: '/ratepreview.png',
-    content: <ProjectContent project={{ title: 'Rrate' }} />,
+    category: 'AI-Powered Database Tool',
+    title: 'TalkWithYourDB | Natural Language Database Query Tool',
+    content: <ProjectContent project={{ title: 'TalkWithYourDB | Natural Language Database Query Tool' }} />,
   },
   {
-    category: 'Hackathon Winner',
-    title: 'Defai',
-    src: '/defaipreview.png',
-    content: <ProjectContent project={{ title: 'Defai' }} />,
+    category: 'Machine Learning Application',
+    title: 'Live ASL | Automatic Sign Language Translator',
+    content: <ProjectContent project={{ title: 'Live ASL | Automatic Sign Language Translator' }} />,
   },
   {
-    category: 'Hackathon Winner',
-    title: 'Fitgear',
-    src: '/fitgearpreview.png',
-    content: <ProjectContent project={{ title: 'Fitgear' }} />,
+    category: 'Mobile Web Application',
+    title: 'Plastico | Mobile Web Application',
+    content: <ProjectContent project={{ title: 'Plastico | Mobile Web Application' }} />,
   },
   {
-    category: 'Business Intelligence',
-    title: 'Datai',
-    src: '/dataipreview.png',
-    content: <ProjectContent project={{ title: 'Datai' }} />,
+    category: 'Computer Vision Application',
+    title: 'AutoTrack | Automatic Attendance System',
+    content: <ProjectContent project={{ title: 'AutoTrack | Automatic Attendance System' }} />,
   },
   {
-    category: '42 Project',
-    title: '3d Pong Game',
-    src: '/transcendancepreview.png',
-    content: <ProjectContent project={{ title: '3d Pong Game' }} />,
-  },
-  {
-    category: '42 Project',
-    title: 'Minishell',
-    src: '/minishellpreview.png',
-    content: <ProjectContent project={{ title: 'Minishell' }} />,
-  },
-  {
-    category: 'Automation',
-    title: 'YouBot',
-    src: '/youbotpreview.png',
-    content: <ProjectContent project={{ title: 'YouBot' }} />,
-  },
-  {
-    category: 'Web Development',
-    title: 'Old Portfolio',
-    src: '/oldportfoliopreview.png',
-    content: <ProjectContent project={{ title: 'Old Portfolio' }} />,
+    category: 'Retail Platform',
+    title: 'ChopServe | Omnichannel Retail Platform',
+    content: <ProjectContent project={{ title: 'ChopServe | Omnichannel Retail Platform' }} />,
   },
 ];
 
 export const projects = [
   {
-    title: 'Live ASL',
-    category: 'Automatic Sign Language Translator',
-    src: 'youbotpreview.png',
-    githubUrl: 'https://github.com/toukoum/you-bot',
-    projectUrl: 'https://you-bot.pages.dev/',
-    description: `Collaboratively designed and implemented an American Sign Language (ASL) interpreter for popular meeting platforms like Zoom and Google Meet, training a multi-layered random forest (MLRF) model on a dataset of over 10,000 phrases. Achieved an accuracy of 96% in translating sign language to text and audio speech.`,
+    title: 'AI Portfolio | Interactive AI-Powered Resume',
+    category: 'AI-Powered Web Application',
+    description: 'Developed a dynamic AI-based portfolio enabling recruiters to interact with a chatbot and inquire about my projects, experience, skills, and resume in real time.',
     tools: [
-      { name: 'Python', icon: '/python.svg' },
-      { name: 'OpenCV', icon: '/opencv.svg' },
-      { name: 'Keras', icon: '/keras.svg' },
-    ],
-    images: [
-      '/youbot1.jpg',
-      '/youbot2.png',
+      { name: 'Next.js' },
+      { name: 'TypeScript' },
+      { name: 'Vercel' },
+      { name: 'LLM Integration' },
+      { name: 'AI Chatbot' }
     ],
   },
   {
-    title: 'Plastico',
+    title: 'TalkWithYourDB | Natural Language Database Query Tool',
+    category: 'AI-Powered Database Tool',
+    description: 'Engineered a web application that allows users to connect to any database via connection string and query it using natural language.',
+    tools: [
+      { name: 'Next.js' },
+      { name: 'TypeScript' },
+      { name: 'AI Prompt Engineering' },
+      { name: 'SQL Generation' },
+      { name: 'Database Connectivity' }
+    ],
+  },
+  {
+    title: 'Live ASL | Automatic Sign Language Translator',
+    category: 'Machine Learning Application',
+    description: 'Designed and implemented an ASL interpreter using a multi-layered random forest model trained on 10,000+ phrases, achieving 96% translation accuracy.',
+    tools: [
+      { name: 'Machine Learning' },
+      { name: 'Multi-layered Random Forest' },
+      { name: 'Computer Vision' },
+      { name: 'Python' },
+      { name: 'OpenCV' }
+    ],
+  },
+  {
+    title: 'Plastico | Mobile Web Application',
     category: 'Mobile Web Application',
-    src: 'transcendancepreview.png',
-    githubUrl: 'https://github.com/toukoum/transcendance',
-    projectUrl: 'https://transcendance.pages.dev/',
-    description: `Played a pivotal role in developing Plastico, a mobile web application that revolutionizes plastic and bio-waste procurement through integrated logistics services, grading systems and tracking functionalities. Leveraged ReactJS for frontend development, with the backend powered by NodeJS. Implemented Firebase as the primary database. Secured 3rd prize in a National-level Hackathon, underscoring project's innovation and environmental impact.`,
+    description: 'Developed Plastico, a mobile web app streamlining plastic and bio-waste procurement with logistics, grading, and tracking using ReactJS, NodeJS, and Firebase.',
     tools: [
-      { name: 'ReactJS', icon: '/react.svg' },
-      { name: 'NodeJS', icon: '/nodejs.svg' },
-      { name: 'Firebase', icon: '/firebase.svg' },
-    ],
-    images: [
-      '/trans1.png',
-      '/trans2.png',
-      '/trans3.png',
-      '/trans4.png',
-      '/trans5.png',
-      '/trans6.png',
+      { name: 'ReactJS' },
+      { name: 'NodeJS' },
+      { name: 'Firebase' },
+      { name: 'Mobile Web App' },
+      { name: 'Logistics Integration' }
     ],
   },
   {
-    title: 'AutoTrack',
-    category: 'Automatic Attendance System',
-    src: 'syntopreview.png',
-    githubUrl: 'https://github.com/toukoum/synto',
-    projectUrl: 'https://synto.jetzt',
-    description: `Engineered a face recognition system utilizing Convolutional Neural Networks (CNN) in conjunction with OpenCV, achieving an accuracy of 95% across diverse conditions. Developed an user-friendly interface using ReactJS and Flask to streamline the attendance tracking process.`,
+    title: 'AutoTrack | Automatic Attendance System',
+    category: 'Computer Vision Application',
+    description: 'Built a CNN-based face recognition system with 95% accuracy using OpenCV, integrating it with a ReactJS and Flask interface for seamless attendance tracking.',
     tools: [
-        { name: 'ReactJS', icon: '/react.svg' },
-        { name: 'Flask', icon: '/flask.svg' },
-        { name: 'Python', icon: '/python.svg' },
-        { name: 'OpenCV', icon: '/opencv.svg' },
+      { name: 'CNN' },
+      { name: 'OpenCV' },
+      { name: 'ReactJS' },
+      { name: 'Flask' },
+      { name: 'Face Recognition' }
     ],
-    images: [
-      '/synto1.png',
-      '/synto2.png',
-      '/synto3.png',
-      '/synto4.png',
-      '/synto5.png',
-      '/synto6.png',
+  },
+  {
+    title: 'ChopServe | Omnichannel Retail Platform',
+    category: 'Retail Platform',
+    description: 'Developed ChopServe, a Golang and GraphQL-powered platform enabling multi-channel retail sales of fish, seafood, and meat.',
+    tools: [
+      { name: 'Golang' },
+      { name: 'GraphQL' },
+      { name: 'Omnichannel Retail' },
+      { name: 'Multi-channel Sales' },
+      { name: 'API Development' }
     ],
   },
 ];
