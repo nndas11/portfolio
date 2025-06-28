@@ -101,7 +101,7 @@ export default function Home() {
       <div className="absolute top-6 right-8 z-20 flex items-center gap-3">
         {/* LinkedIn */}
         <a
-          href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+          href="https://linkedin.com/in/mohammed-nihad"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
@@ -112,7 +112,7 @@ export default function Home() {
 
         {/* GitHub */}
         <a
-          href="https://github.com/YOUR_GITHUB_USERNAME"
+          href="https://github.com/nndas11"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
@@ -123,7 +123,7 @@ export default function Home() {
 
         {/* LeetCode */}
         <a
-          href="https://leetcode.com/YOUR_LEETCODE_USERNAME"
+          href="https://leetcode.com/u/user8434R/"
           target="_blank"
           rel="noopener noreferrer"
           className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"

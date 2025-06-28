@@ -306,7 +306,6 @@ const Chat = () => {
           trigger={
             <div className=" hover:bg-accent cursor-pointer rounded-2xl px-3 py-1.5">
               <Info className="text-accent h-8" />
-              <p> Talk with me..</p>
             </div>
           }
         />
@@ -318,7 +317,7 @@ const Chat = () => {
           <div className="flex items-center gap-3">
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+              href="https://linkedin.com/in/mohammed-nihad"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-lg backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
@@ -328,7 +327,7 @@ const Chat = () => {
             </a>
             {/* GitHub */}
             <a
-              href="https://github.com/YOUR_GITHUB_USERNAME"
+              href="https://github.com/nndas11"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
@@ -338,7 +337,7 @@ const Chat = () => {
             </a>
             {/* LeetCode */}
             <a
-              href="https://leetcode.com/YOUR_LEETCODE_USERNAME"
+              href="https://leetcode.com/u/user8434R/"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-lg backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
