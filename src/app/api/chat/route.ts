@@ -12,7 +12,6 @@ import { getInternship } from './tools/getInternship';
 
 export const maxDuration = 30;
 
-// ❌ Pas besoin de l'export ici, Next.js n'aime pas ça
 function errorHandler(error: unknown) {
   if (error == null) {
     return 'Unknown error';

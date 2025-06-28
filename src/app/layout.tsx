@@ -92,29 +92,7 @@ export default function RootLayout({
           enableSystem={false}
           disableTransitionOnChange
         >
-          {/* Social and Resume Links */}
-          <div className="absolute top-6 right-8 z-20 flex items-center gap-4">
-            <a href="https://github.com/mohammed-nihad" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" />
-            </a>
-            <a href="https://linkedin.com/in/mohammed-nihad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" />
-            </a>
-            {/* TODO */}
-            <a href="YOUR_LEETCODE_URL" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
-              <LeetCodeIcon className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" fill="currentColor" />
-            </a>
-            {/* TODO */}
-            <a
-              href="/resume_giraud.pdf"
-              download="Mohammed_Nihad_Resume.pdf"
-              className="flex items-center gap-2 rounded-full border bg-white/30 px-3 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
-              aria-label="Download Resume"
-            >
-              <Download className="h-4 w-4" />
-              Resume
-            </a>
-          </div>
+      
           <main className="flex min-h-screen flex-col">
             {children}
           </main>

@@ -2,9 +2,10 @@
 import { useChat } from '@ai-sdk/react';
 import { AnimatePresence, motion } from 'framer-motion';
 import dynamic from 'next/dynamic';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { toast } from 'sonner';
+import Image from 'next/image';
 
 // Component imports
 import ChatBottombar from '@/components/chat/chat-bottombar';
@@ -19,7 +20,6 @@ import WelcomeModal from '@/components/welcome-modal';
 import { Download, Github, Info, Linkedin } from 'lucide-react';
 import GitHubButton from 'react-github-btn';
 import HelperBoost from './HelperBoost';
-import { LeetCodeIcon } from '../ui/leetcode-icon';
 
 // ClientOnly component for client-side rendering
 //@ts-ignore
@@ -121,6 +121,7 @@ const MOTION_CONFIG = {
 const Chat = () => {
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const searchParams = useSearchParams();
+  const router = useRouter();
   const initialQuery = searchParams.get('query');
   const [autoSubmitted, setAutoSubmitted] = useState(false);
   const [loadingSubmit, setLoadingSubmit] = useState(false);
@@ -275,54 +276,89 @@ const Chat = () => {
   // Calculate header height based on hasActiveTool
   const headerHeight = hasActiveTool ? 100 : 180;
 
+  const goToChat = (query: string) => {
+    router.push(`/chat?query=${encodeURIComponent(query)}`);
+  };
+
   return (
+    
     <div className="relative h-screen overflow-hidden">
+
+  {/* Open to Internships Button (top left) */}
+      <div className="absolute top-6 left-8 z-51 flex flex-col-reverse items-center justify-center gap-1 md:flex-row">
+      <button
+          onClick={() => goToChat('Are you looking for internship opportunities?')}
+          className="cursor-pointer relative flex items-center gap-2 rounded-full border-2 border-blue-500 bg-blue-600/90 px-4 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur-lg transition-all hover:bg-blue-700 hover:scale-105 dark:border-blue-400 dark:bg-blue-600/80 dark:hover:bg-blue-700/90 mb-8"
+        >
+          {/* Animated pulse dot */}
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
+          </span>
+          Open to Internships
+        </button>
+      </div>
+
+     
+
       <div className="absolute top-6 right-8 z-51 flex flex-col-reverse items-center justify-center gap-1 md:flex-row">
-        {/* <WelcomeModal
+        <WelcomeModal
           trigger={
             <div className=" hover:bg-accent cursor-pointer rounded-2xl px-3 py-1.5">
               <Info className="text-accent h-8" />
+              <p> Talk with me..</p>
             </div>
           }
-        /> */}
+        />
 
-        {/* <div className="pt-2">
-          <GitHubButton
-            href="https://github.com/toukoum/portfasdsadolio"
-            data-color-scheme="no-preference: light; light: light; dark: light_high_contrast;"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star toukoum/portfolio on GitHub"
-          >
-            Star
-          </GitHubButton>
-        </div> */}
+       
 
-<div className="absolute top-6 right-8 z-20 flex items-center gap-4">
-            <a href="https://github.com/mohammed-nihad" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-              <Github className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" />
-            </a>
-            <a href="https://linkedin.com/in/mohammed-nihad" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <Linkedin className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" />
-            </a>
-            {/* TODO */}
-            <a href="YOUR_LEETCODE_URL" target="_blank" rel="noopener noreferrer" aria-label="LeetCode">
-              <LeetCodeIcon className="h-6 w-6 text-foreground transition-colors hover:text-muted-foreground" fill="currentColor" />
-            </a>
-            {/* TODO */}
+        
+          {/* Right side: social icons and resume button */}
+          <div className="flex items-center gap-3">
+            {/* LinkedIn */}
             <a
-              href="/resume_giraud.pdf"
-              download="Mohammed_Nihad_Resume.pdf"
-              className="flex items-center gap-2 rounded-full border bg-white/30 px-3 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+              href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-lg backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+              aria-label="LinkedIn Profile"
+            >
+              <Linkedin className="h-5 w-5" />
+            </a>
+            {/* GitHub */}
+            <a
+              href="https://github.com/YOUR_GITHUB_USERNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+              aria-label="GitHub Profile"
+            >
+              <Github className="h-5 w-5" />
+            </a>
+            {/* LeetCode */}
+            <a
+              href="https://leetcode.com/YOUR_LEETCODE_USERNAME"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-lg backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+              aria-label="LeetCode Profile"
+            >
+              <Image src="/leetcode.svg" alt="LeetCode" width={20} height={20} />
+            </a>
+            {/* Resume Download */}
+            <a
+              href="/resume_nihad.pdf"
+              download
+              className="flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 text-xs font-semibold text-white shadow-lg backdrop-blur-lg transition-all hover:from-blue-700 hover:to-purple-700 hover:scale-105 dark:from-blue-600 dark:to-purple-600 dark:hover:from-blue-700 dark:hover:to-purple-700"
               aria-label="Download Resume"
             >
               <Download className="h-4 w-4" />
-              Resume
+              <span className="hidden sm:inline">Download Resume</span>
             </a>
           </div>
-      </div>
-
-
+        </div>
+      
 
       {/* Fixed Avatar Header with Gradient */}
       <div
@@ -379,14 +415,21 @@ const Chat = () => {
               <motion.div
                 key="landing"
                 className="flex min-h-full items-center justify-center"
-                {...MOTION_CONFIG}
+                {...{
+                  ...MOTION_CONFIG,
+                  transition: {
+                    ...MOTION_CONFIG.transition,
+                    // Fix: use an easing function instead of a string
+                    ease: [0.4, 0, 0.2, 1],
+                  },
+                }}
               >
                 <ChatLanding submitQuery={submitQuery} />
               </motion.div>
             ) : currentAIMessage ? (
               <div className="pb-4">
                 <SimplifiedChatView
-                  message={currentAIMessage}
+                  message={currentAIMessage as any}
                   isLoading={isLoading}
                   reload={reload}
                   addToolResult={addToolResult}

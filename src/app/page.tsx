@@ -2,6 +2,7 @@
 
 import FluidCursor from '@/components/FluidCursor';
 import { Button } from '@/components/ui/button';
+import { LeetCodeIcon } from '@/components/ui/leetcode-icon';
 import WelcomeModal from '@/components/welcome-modal';
 import { motion } from 'framer-motion';
 import {
@@ -12,6 +13,9 @@ import {
   PartyPopper,
   UserRoundSearch,
   FileText,
+  Download,
+  Github,
+  Linkedin,
 } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
@@ -93,17 +97,69 @@ export default function Home() {
         </div>
       </div>
 
+      {/* Social Links & Resume Button */}
+      <div className="absolute top-6 right-8 z-20 flex items-center gap-3">
+        {/* LinkedIn */}
+        <a
+          href="https://linkedin.com/in/YOUR_LINKEDIN_USERNAME"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+          aria-label="LinkedIn Profile"
+        >
+          <Linkedin className="h-5 w-5" />
+        </a>
+
+        {/* GitHub */}
+        <a
+          href="https://github.com/YOUR_GITHUB_USERNAME"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+          aria-label="GitHub Profile"
+        >
+          <Github className="h-5 w-5" />
+        </a>
+
+        {/* LeetCode */}
+        <a
+          href="https://leetcode.com/YOUR_LEETCODE_USERNAME"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center justify-center rounded-full bg-white/30 p-2.5 text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-white dark:text-white dark:hover:bg-neutral-800"
+          aria-label="LeetCode Profile"
+        >
+          <Image 
+            src="/leetcode.svg" 
+            alt="LeetCode" 
+            width={20} 
+            height={20} 
+          />
+        </a>
+
+        {/* Resume Download */}
+        <a
+          href="/resume_nihad.pdf"
+          download
+          className="flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-6 py-3 text-sm font-semibold text-white shadow-lg backdrop-blur-lg transition-all hover:from-blue-700 hover:to-purple-700 hover:scale-105 dark:from-blue-600 dark:to-purple-600 dark:hover:from-blue-700 dark:hover:to-purple-700"
+          aria-label="Download Resume"
+        >
+          <Download className="h-5 w-5" />
+          <span className="hidden sm:inline">Download Resume</span>
+        </a>
+      </div>
+
       <div className="absolute top-6 left-6 z-20">
         <button
-          onClick={() => goToChat('Are you looking for an internship?')}
-          className="cursor-pointer relative flex items-center gap-2 rounded-full border bg-white/30 px-4 py-1.5 text-sm font-medium text-black shadow-md backdrop-blur-lg transition hover:bg-white/60 dark:border-blue-500 dark:text-white dark:hover:bg-blue-700/20"
+          onClick={() => goToChat('Are you looking for internship opportunities?')}
+          className="cursor-pointer relative flex items-center gap-2 rounded-full border-2 border-blue-500 bg-blue-600/90 px-4 py-2 text-sm font-semibold text-white shadow-lg backdrop-blur-lg transition-all hover:bg-blue-700 hover:scale-105 dark:border-blue-400 dark:bg-blue-600/80 dark:hover:bg-blue-700/90 mb-8"
         >
-          {/* Blue pulse dot */}
+          {/* Animated pulse dot */}
           <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-400 opacity-75"></span>
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500"></span>
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-white opacity-75"></span>
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-white"></span>
           </span>
-          Open to Work
+          Open to Internships
         </button>
       </div>
 
@@ -121,6 +177,9 @@ export default function Home() {
         <h2 className="text-secondary-foreground mt-1 text-xl font-semibold md:text-2xl">
           Hey, I'm Nihad 👋
         </h2>
+        <p className="text-muted-foreground mt-2 text-lg font-normal md:text-xl">
+          Master's in Software Engineering Student at San José State University
+        </p>
         <h1 className="text-4xl font-bold sm:text-5xl md:text-6xl lg:text-7xl">
           AI portfolio
         </h1>
@@ -180,10 +239,10 @@ export default function Home() {
               key={key}
               onClick={() => goToChat(questions[key])}
               variant="outline"
-              className="shadow-none border-border hover:bg-border/30 aspect-square w-full cursor-pointer rounded-2xl border bg-white/30 py-8 backdrop-blur-lg active:scale-95 md:p-10"
+              className="shadow-lg border-border hover:bg-border/30 aspect-square w-full cursor-pointer rounded-full border bg-white/30 py-8 backdrop-blur-lg active:scale-95 md:p-10"
             >
-              <div className="flex h-full flex-col items-center justify-center gap-1 text-gray-700">
-                <Icon size={22} strokeWidth={2} color={color} />
+              <div className="flex h-full flex-col items-center justify-center gap-1 text-blue-600">
+                <Icon size={22} strokeWidth={2} />
                 <span className="text-xs font-medium sm:text-sm">{key}</span>
               </div>
             </Button>

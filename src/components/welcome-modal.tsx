@@ -51,11 +51,11 @@ export default function WelcomeModal({ trigger }: WelcomeModalProps) {
   return (
     <>
       {/* Use custom trigger if provided, otherwise use default */}
-      {trigger ? (
+      {/* {trigger ? (
         <div onClick={() => setIsOpen(true)}>{trigger}</div>
       ) : (
         defaultTrigger
-      )}
+      )} */}
 
       <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className="bg-background z-52 max-h-[85vh] overflow-auto rounded-2xl border-none p-4 py-6 shadow-xl sm:max-w-[85vw] md:max-w-[80vw] lg:max-w-[1000px]">
