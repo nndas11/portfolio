@@ -68,7 +68,7 @@ const ChatLanding: React.FC<ChatLandingProps> = ({ submitQuery }) => {
       variants={containerVariants}
     >
       {/* Welcome message */}
-      <motion.div className="mb-8 text-center" variants={itemVariants}>
+      <motion.div className="mb-8 text-center" variants={itemVariants as any}>
         <h2 className="mb-3 text-2xl font-semibold">
             I'm here to answer your query...
         </h2>

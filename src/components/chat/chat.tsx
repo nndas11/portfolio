@@ -347,7 +347,7 @@ const Chat = () => {
             </a>
             {/* Resume Download */}
             <a
-              href="/resume_nihad.pdf"
+              href="/resume.pdf"
               download
               className="flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 px-4 py-2 text-xs font-semibold text-white shadow-lg backdrop-blur-lg transition-all hover:from-blue-700 hover:to-purple-700 hover:scale-105 dark:from-blue-600 dark:to-purple-600 dark:hover:from-blue-700 dark:hover:to-purple-700"
               aria-label="Download Resume"

@@ -15,10 +15,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Toukoum Portfolio",
+  title: "Nihad Portfolio",
   description: "Interactive portfolio with an AI-powered Memoji that answers questions about me, my skills, and my experience",
-  keywords: [
-    "Toukoum", 
+  keywords: [ 
     "Portfolio", 
     "Developer", 
     "AI", 
@@ -31,24 +30,24 @@ export const metadata: Metadata = {
   ],
   authors: [
     {
-      name: "Toukoum",
-      url: "https://toukoum.fr",
+      name: "Nihad",
+      url: "https://portfolio-gv2d.vercel.app/",
     },
   ],
-  creator: "Toukoum",
+  creator: "Nihad",
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://toukoum.fr",
-    title: "Toukoum Portfolio",
+    url: "https://portfolio-gv2d.vercel.app/",
+    title: "Nihad Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    siteName: "Toukoum Portfolio",
+    siteName: "Nihad Portfolio",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Toukoum Portfolio",
+    title: "Nihad Portfolio",
     description: "Interactive portfolio with an AI-powered Memoji that answers questions about me",
-    creator: "@toukoum",
+    creator: "@Nihad",
   },
   icons: {
     icon: [
