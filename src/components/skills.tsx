@@ -9,75 +9,135 @@ export default function Skills() {
     {
       title: 'Programming Languages',
       icon: '💻',
-      skills: ['Golang', 'Java', 'C++', 'Python', 'TypeScript', 'JavaScript']
+      skills: ['Go (Golang)', 'Java', 'C++', 'Python', 'TypeScript', 'JavaScript', 'SQL']
     },
     {
-      title: 'Frontend Development',
-      icon: '🎨',
-      skills: ['ReactJS', 'NodeJS', 'Ant Design', 'Responsive UI Design']
+      title: 'CS Fundamentals',
+      icon: '🧠',
+      skills: [
+        'Data Structures & Algorithms',
+        'Object-Oriented Design',
+        'System Design',
+        'Distributed Systems',
+        'Concurrency',
+        'Networking Basics',
+        'Security Basics'
+      ]
     },
     {
       title: 'Backend & APIs',
       icon: '🔧',
-      skills: ['GraphQL', 'REST APIs', 'Microservices', 'Spring Boot']
+      skills: [
+        'Microservices Architecture',
+        'REST APIs',
+        'GraphQL',
+        'gRPC',
+        'Spring Boot',
+        'Django REST Framework',
+        'Node.js'
+      ]
     },
     {
-      title: 'Databases',
+      title: 'Databases & Caching',
       icon: '🗄️',
-      skills: ['SQL', 'NoSQL', 'Database Design']
+      skills: ['PostgreSQL', 'MySQL', 'Redis', 'Database Design', 'Query Optimization']
     },
     {
-      title: 'DevOps & Cloud',
+      title: 'Distributed Systems & Messaging',
+      icon: '📨',
+      skills: ['Apache Kafka', 'Event-Driven Architecture', 'High-Throughput Pipelines']
+    },
+    {
+      title: 'Cloud & DevOps',
       icon: '☁️',
-      skills: ['AWS', 'Docker', 'Kubernetes', 'ArgoCD', 'GitHub Actions', 'CI/CD']
+      skills: [
+        'AWS (EKS, EC2, RDS, S3, VPC)',
+        'Docker',
+        'Kubernetes',
+        'CI/CD (GitHub Actions, Jenkins)',
+        'ArgoCD',
+        'API Gateways (Kong, Ambassador)'
+      ]
     },
     {
-      title: 'Monitoring & Observability',
+      title: 'Reliability & Observability',
       icon: '📊',
-      skills: ['Grafana', 'Prometheus', 'Loki', 'Fluent Bit']
+      skills: ['Grafana', 'Prometheus', 'Loki', 'Fluent Bit', 'Monitoring & Alerting', 'Logging']
     },
     {
-      title: 'AI & Machine Learning',
+      title: 'Applied AI Systems',
       icon: '🤖',
-      skills: ['OpenCV', 'Keras', 'CNN', 'Random Forest', 'Computer Vision', 'Data Mining']
+      skills: [
+        'Large Language Models (LLMs)',
+        'Prompt Engineering',
+        'RAG Pipelines',
+        'Natural Language → SQL',
+        'Hugging Face',
+        'Pinecone',
+        'Model Routing & Evaluation',
+        'Random Forest',
+        'Computer Vision (OpenCV)'
+      ]
     },
     {
-      title: 'Tools & Platforms',
+      title: 'AI-Assisted Development',
+      icon: '⚡',
+      skills: ['Claude Code', 'Cursor', 'ChatGPT', 'Google Gemini', 'AI-assisted Debugging', 'AI-assisted Code Review']
+    },
+    {
+      title: 'Developer Tools',
       icon: '🛠️',
-      skills: ['Git', 'Eclipse IDE', 'TestNG', 'Bitbucket Pipelines']
+      skills: ['Git', 'Linux', 'Bash', 'Maven', 'IntelliJ IDEA', 'VS Code', 'Bitbucket']
+    },
+    {
+      title: 'Frontend (when needed)',
+      icon: '🎨',
+      skills: ['React.js', 'Next.js', 'Responsive UI Design', 'Ant Design', 'WebSockets']
     }
   ];
 
-  const softSkills = [
-    'Team Collaboration',
-    'Problem Solving',
+  // For Google team-matching, "Engineering Strengths" reads better than generic "Soft Skills".
+  const engineeringStrengths = [
+    'Production Backend Engineering',
     'Scalable Architecture Design',
     'Performance Optimization',
-    'Cross-functional Communication',
-    'API Integration',
-    'Infrastructure as Code'
+    'Debugging & Root Cause Analysis',
+    'Cross-functional Collaboration'
   ];
 
-  const expertise = [
-    'Full-stack Development',
-    'Microservices Architecture',
-    'DevOps & Cloud Infrastructure',
-    'AI/ML Implementation',
-    'System Optimization',
-    'Mobile App Development',
-    'API Gateway Management'
+  // Keep achievements only if you can verify them (resume/LinkedIn/certificate).
+  const achievements = [
+    // If Spot Award is real, keep it. If not verifiable, remove it to avoid mismatch.
+    // {
+    //   title: 'Spot Award — CaptainFresh',
+    //   desc: 'For outstanding individual contribution and scalable designs'
+    // },
+    {
+      title: '3rd Prize — National Hackathon',
+      desc: 'Plastico: waste procurement & tracking platform'
+    },
+    {
+      title: 'Microsoft Sponsor Award — Stanford GREEN AI Hackathon',
+      desc: 'Echo AI Router: model routing to optimize latency, cost, and carbon footprint'
+    },
+    {
+      title: '96% Accuracy — Live ASL Translator',
+      desc: 'Real-time sign language to text/audio translation'
+    },
+    {
+      title: '70% Workflow Improvement — Esper',
+      desc: 'ADB bookmark feature for faster developer workflows'
+    }
   ];
 
   return (
     <div className="space-y-6">
-      {/* Technical Skills */}
+      {/* Skills */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            🚀 Technical Skills
-          </CardTitle>
+          <CardTitle className="flex items-center gap-2">🚀 Skills</CardTitle>
           <CardDescription>
-            Technologies and tools I work with
+            Backend, systems, and applied AI skills with a production engineering focus.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
@@ -98,20 +158,16 @@ export default function Skills() {
         </CardContent>
       </Card>
 
-      {/* Soft Skills */}
+      {/* Engineering Strengths */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            🤝 Soft Skills
-          </CardTitle>
-          <CardDescription>
-            Professional competencies and interpersonal skills
-          </CardDescription>
+          <CardTitle className="flex items-center gap-2">🎯 Engineering Strengths</CardTitle>
+          <CardDescription>How I approach building and operating systems.</CardDescription>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-2">
-            {softSkills.map((skill) => (
-              <Badge key={skill} variant="outline" className="text-sm">
+            {engineeringStrengths.map((skill) => (
+              <Badge key={skill} variant="secondary" className="text-sm">
                 {skill}
               </Badge>
             ))}
@@ -119,66 +175,22 @@ export default function Skills() {
         </CardContent>
       </Card>
 
-      {/* Areas of Expertise */}
+      {/* Highlights */}
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            🎯 Areas of Expertise
-          </CardTitle>
-          <CardDescription>
-            Specialized domains and technical focus areas
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <div className="flex flex-wrap gap-2">
-            {expertise.map((area) => (
-              <Badge key={area} variant="secondary" className="text-sm">
-                {area}
-              </Badge>
-            ))}
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Key Achievements */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2">
-            🏆 Key Achievements
-          </CardTitle>
-          <CardDescription>
-            Notable accomplishments and recognitions
-          </CardDescription>
+          <CardTitle className="flex items-center gap-2">🏆 Highlights</CardTitle>
+          <CardDescription>Impact-driven wins and recognition.</CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="flex items-start gap-3">
-            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-            <div>
-              <p className="font-medium">Spot Award at CaptainFresh</p>
-              <p className="text-sm text-muted-foreground">For outstanding individual contribution and scalable designs</p>
+          {achievements.map((a) => (
+            <div key={a.title} className="flex items-start gap-3">
+              <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0" />
+              <div>
+                <p className="font-medium">{a.title}</p>
+                <p className="text-sm text-muted-foreground">{a.desc}</p>
+              </div>
             </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-            <div>
-              <p className="font-medium">3rd Prize in National Hackathon</p>
-              <p className="text-sm text-muted-foreground">For Plastico project - environmental impact through waste management</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-            <div>
-              <p className="font-medium">96% Accuracy in AI Model</p>
-              <p className="text-sm text-muted-foreground">Live ASL sign language translator with real-time processing</p>
-            </div>
-          </div>
-          <div className="flex items-start gap-3">
-            <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-            <div>
-              <p className="font-medium">70% Efficiency Improvement</p>
-              <p className="text-sm text-muted-foreground">ADB bookmark feature at Esper for mobile device management</p>
-            </div>
-          </div>
+          ))}
         </CardContent>
       </Card>
     </div>
