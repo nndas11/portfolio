@@ -1,6 +1,6 @@
 'use client';
 
-import { Message } from 'ai/react';
+import type { UIMessage } from "ai";;
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import {
@@ -11,8 +11,19 @@ import {
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { useState } from 'react';
 
+type ChatTextPart = {
+  type: string;
+  text?: string;
+};
+
+type ChatMessageLike = {
+  parts?: ChatTextPart[];
+};
+
+
+
 export type ChatMessageContentProps = {
-  message: Message;
+  message: ChatMessageLike;
   isLast?: boolean;
   isLoading?: boolean;
   reload?: () => Promise<string | null | undefined>;
