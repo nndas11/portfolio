@@ -199,78 +199,153 @@ import { Separator } from '@/components/ui/separator';
 //     content: <ProjectContent project={{ title: 'ChopServe | Omnichannel Retail Platform' }} />,
 //   },
 // ];
-
 export const projects = [
+  // {
+  //   title: 'Echo AI Router | Sustainable LLM Model Routing',
+  //   category: 'AI Systems / Infrastructure',
+  //   description:
+  //     'Built a model-routing gateway that selects the lightest viable LLM per request based on prompt complexity, latency, cost, and carbon footprint, while preserving response quality with evaluation + telemetry.',
+  //   tools: [
+  //     { name: 'FastAPI' },
+  //     { name: 'Python' },
+  //     { name: 'Model Routing' },
+  //     { name: 'LLM Evaluation' },
+  //     { name: 'Hugging Face' },
+  //     { name: 'Local Inference' },
+  //     { name: 'Telemetry / Dashboards' }
+  //   ]
+  // },
+  {
+    title: 'VIGIL | Incident Triage & Safe Remediation Engine',
+    category: 'Reliability / Distributed Systems',
+    description:
+      'Designed a human-on-the-loop incident workflow (trigger → investigate → remediate → verify) using a state machine with safety gates: PII redaction, sandboxed execution, approval for high-risk actions, and post-fix synthetic verification.',
+    tools: [
+      { name: 'Node.js' },
+      { name: 'Express' },
+      { name: 'Redis (State)' },
+      { name: 'Docker' },
+      { name: 'Kubernetes' },
+      { name: 'Slack Approvals' },
+      { name: 'LLM (Claude)' }
+    ]
+  },
+  {
+    title: 'TalkWithYourDB | Natural Language → SQL Query Tool',
+    category: 'Applied LLM Systems',
+    description:
+      'Built an LLM-based tool that converts natural language questions into SQL queries with guardrails, enabling users to query databases via connection strings with a focus on safe execution and clean UX.',
+    tools: [
+      { name: 'Next.js' },
+      { name: 'TypeScript' },
+      { name: 'Prompt Engineering' },
+      { name: 'NL → SQL' },
+      { name: 'PostgreSQL' },
+      { name: 'Vector Search (Pinecone)' }
+    ]
+  },
+  {
+    title: 'Realtime Chat Service | WebSockets + Redis Pub/Sub',
+    category: 'Backend / Distributed Systems',
+    description:
+      'Implemented a low-latency chat backend using WebSockets and Redis Pub/Sub for distributed messaging; containerized and deployed with Docker/Kubernetes and load-tested for high concurrency.',
+    tools: [
+      { name: 'Go (Golang)' },
+      { name: 'WebSockets' },
+      { name: 'Redis Pub/Sub' },
+      { name: 'Docker' },
+      { name: 'Kubernetes' },
+      { name: 'Load Testing' }
+    ]
+  },
+  {
+    title: 'Weather–Complaint Analytics Data Pipeline',
+    category: 'Data Engineering',
+    description:
+      'Built an end-to-end analytics pipeline combining complaint data with weather signals using Airflow orchestration, PostgreSQL storage, ML tasks, and Metabase dashboards in a Dockerized deployment.',
+    tools: [
+      { name: 'Python' },
+      { name: 'Apache Airflow' },
+      { name: 'PostgreSQL' },
+      { name: 'Docker' },
+      { name: 'Metabase' },
+      { name: 'ETL / Data Modeling' }
+    ]
+  },
+  {
+    title: 'Log Aggregator CLI | Extensible Log Processing',
+    category: 'Software Design / Java',
+    description:
+      'Built a Java-based log aggregation CLI to normalize and analyze logs from multiple sources; designed for extensibility using Strategy, Chain of Responsibility, and Registry patterns.',
+    tools: [
+      { name: 'Java' },
+      { name: 'OOP' },
+      { name: 'Design Patterns' },
+      { name: 'Maven' }
+    ]
+  },
+  {
+    title: 'Campus Marketplace | Campus-Only E-Commerce Platform',
+    category: 'Full-Stack / Distributed Components',
+    description:
+      'Developed a campus marketplace with Django REST APIs and scalable workflows using PostgreSQL + Redis + Kafka; deployed on AWS with Auto Scaling and integrated AI-powered search for discovery.',
+    tools: [
+      { name: 'Django REST Framework' },
+      { name: 'PostgreSQL' },
+      { name: 'Redis' },
+      { name: 'Kafka' },
+      { name: 'AWS' },
+      { name: 'Search (Gemini)' }
+    ]
+  },
+  {
+    title: 'Live ASL | Real-Time Sign Language Translator',
+    category: 'Applied ML',
+    description:
+      'Built an ASL interpreter using a multi-layered Random Forest model trained on 10,000+ phrases, achieving 96% accuracy for sign-to-text/audio translation.',
+    tools: [
+      { name: 'Python' },
+      { name: 'Machine Learning' },
+      { name: 'Random Forest' },
+      { name: 'Computer Vision' },
+      { name: 'OpenCV' }
+    ]
+  },
+  {
+    title: 'Plastico | Waste Procurement & Tracking App',
+    category: 'Full-Stack',
+    description:
+      'Built a mobile-first app for plastic and bio-waste procurement, integrating logistics, grading, and tracking workflows; won 3rd prize at a national hackathon.',
+    tools: [
+      { name: 'React.js' },
+      { name: 'Node.js' },
+      { name: 'Firebase' },
+      { name: 'TypeScript' }
+    ]
+  },
+  {
+    title: 'ChopServe | Omnichannel Retail Platform (Production)',
+    category: 'Industry / Backend Systems',
+    description:
+      'Architected and developed an omnichannel retail platform enabling multi-channel ordering, order management, and inventory tracking using Go + GraphQL with production-grade deployment practices.',
+    tools: [
+      { name: 'Go (Golang)' },
+      { name: 'GraphQL' },
+      { name: 'Microservices' },
+      { name: 'PostgreSQL' },
+      { name: 'Redis' }
+    ]
+  },
   {
     title: 'AI Portfolio | Interactive AI-Powered Resume',
-    category: 'AI-Powered Web Application',
-    description: 'Developed a dynamic AI-based portfolio enabling recruiters to interact with a chatbot and inquire about my projects, experience, skills, and resume in real time.',
+    category: 'Developer Experience',
+    description:
+      'Built an interactive portfolio where recruiters can query my experience and projects via a chatbot, using structured prompt design and fast deployment for a smooth browsing experience.',
     tools: [
       { name: 'Next.js' },
       { name: 'TypeScript' },
       { name: 'Vercel' },
-      { name: 'LLM Integration' },
-      { name: 'AI Chatbot' }
-    ],
-  },
-  {
-    title: 'TalkWithYourDB | Natural Language Database Query Tool',
-    category: 'AI-Powered Database Tool',
-    description: 'Engineered a web application that allows users to connect to any database via connection string and query it using natural language.',
-    tools: [
-      { name: 'Next.js' },
-      { name: 'TypeScript' },
-      { name: 'AI Prompt Engineering' },
-      { name: 'SQL Generation' },
-      { name: 'Database Connectivity' }
-    ],
-  },
-  {
-    title: 'Live ASL | Automatic Sign Language Translator',
-    category: 'Machine Learning Application',
-    description: 'Designed and implemented an ASL interpreter using a multi-layered random forest model trained on 10,000+ phrases, achieving 96% translation accuracy.',
-    tools: [
-      { name: 'Machine Learning' },
-      { name: 'Multi-layered Random Forest' },
-      { name: 'Computer Vision' },
-      { name: 'Python' },
-      { name: 'OpenCV' }
-    ],
-  },
-  {
-    title: 'Plastico | Mobile Web Application',
-    category: 'Mobile Web Application',
-    description: 'Developed Plastico, a mobile web app streamlining plastic and bio-waste procurement with logistics, grading, and tracking using ReactJS, NodeJS, and Firebase.',
-    tools: [
-      { name: 'ReactJS' },
-      { name: 'NodeJS' },
-      { name: 'Firebase' },
-      { name: 'Mobile Web App' },
-      { name: 'Logistics Integration' }
-    ],
-  },
-  {
-    title: 'AutoTrack | Automatic Attendance System',
-    category: 'Computer Vision Application',
-    description: 'Built a CNN-based face recognition system with 95% accuracy using OpenCV, integrating it with a ReactJS and Flask interface for seamless attendance tracking.',
-    tools: [
-      { name: 'CNN' },
-      { name: 'OpenCV' },
-      { name: 'ReactJS' },
-      { name: 'Flask' },
-      { name: 'Face Recognition' }
-    ],
-  },
-  {
-    title: 'ChopServe | Omnichannel Retail Platform',
-    category: 'Retail Platform',
-    description: 'Developed ChopServe, a Golang and GraphQL-powered platform enabling multi-channel retail sales of fish, seafood, and meat.',
-    tools: [
-      { name: 'Golang' },
-      { name: 'GraphQL' },
-      { name: 'Omnichannel Retail' },
-      { name: 'Multi-channel Sales' },
-      { name: 'API Development' }
-    ],
-  },
+      { name: 'LLM Integration' }
+    ]
+  }
 ];
