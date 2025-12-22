@@ -90,7 +90,7 @@ export default function Skills() {
       skills: ['Git', 'Linux', 'Bash', 'Maven', 'IntelliJ IDEA', 'VS Code', 'Bitbucket']
     },
     {
-      title: 'Frontend (when needed)',
+      title: 'Frontend',
       icon: '🎨',
       skills: ['React.js', 'Next.js', 'Responsive UI Design', 'Ant Design', 'WebSockets']
     }
