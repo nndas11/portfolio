@@ -3,36 +3,87 @@ import { z } from 'zod';
 
 export const getSkills = tool({
   description:
-    'This tool returns Mohammed Nihad\'s technical skills and expertise. Use this when users ask about skills, technologies, or technical background.',
+    "Returns Mohammed Nihad's technical skills with a focus on computer science fundamentals, backend systems, and production engineering experience.",
   parameters: z.object({}),
   execute: async () => {
     return {
       skills: {
-        programmingLanguages: ['Golang', 'Java', 'C++', 'Python', 'TypeScript', 'JavaScript'],
-        frontend: ['ReactJS', 'NodeJS', 'Ant Design', 'Responsive UI Design'],
-        backend: ['GraphQL', 'REST APIs', 'Microservices Architecture', 'Spring Boot'],
-        databases: ['SQL', 'NoSQL', 'Database Design'],
-        devops: ['AWS', 'Docker', 'Kubernetes', 'ArgoCD', 'GitHub Actions', 'CI/CD'],
-        monitoring: ['Grafana', 'Prometheus', 'Loki', 'Fluent Bit'],
-        ai_ml: ['OpenCV', 'Keras', 'CNN', 'Random Forest', 'Computer Vision', 'Data Mining'],
-        tools: ['Git', 'Eclipse IDE', 'TestNG', 'Bitbucket Pipelines'],
-        softSkills: [
-          'Team Collaboration',
-          'Problem Solving',
-          'Scalable Architecture Design',
-          'Performance Optimization',
-          'Cross-functional Communication',
-          'API Integration',
-          'Infrastructure as Code'
+        coreLanguages: [
+          'Go (Golang)',
+          'Java',
+          'C++',
+          'Python',
+          'TypeScript',
+          'SQL'
         ],
-        expertise: [
-          'Full-stack Development',
+
+        computerScienceFundamentals: [
+          'Data Structures & Algorithms',
+          'Object-Oriented Design',
+          'System Design',
+          'Distributed Systems',
+          'Concurrency & Multithreading',
+          'Networking Basics',
+          'Operating Systems Concepts'
+        ],
+
+        backendAndSystems: [
           'Microservices Architecture',
-          'DevOps & Cloud Infrastructure',
-          'AI/ML Implementation',
-          'System Optimization',
-          'Mobile App Development',
-          'API Gateway Management'
+          'REST APIs',
+          'GraphQL',
+          'gRPC',
+          'Event-Driven Systems',
+          'High-Throughput & Low-Latency Systems'
+        ],
+
+        dataAndMessaging: [
+          'PostgreSQL',
+          'MySQL',
+          'Redis',
+          'Apache Kafka',
+          'Database Design & Query Optimization'
+        ],
+
+        cloudAndInfrastructure: [
+          'AWS (EKS, EC2, RDS, S3)',
+          'Docker',
+          'Kubernetes',
+          'CI/CD Pipelines',
+          'API Gateways (Kong, Ambassador)'
+        ],
+
+        reliabilityAndObservability: [
+          'Monitoring & Alerting',
+          'Grafana',
+          'Prometheus',
+          'Centralized Logging (Loki, Fluent Bit)',
+          'High Availability & Fault Tolerance'
+        ],
+
+        aiAndAppliedML: [
+          'Large Language Models (LLMs)',
+          'Prompt Engineering',
+          'Retrieval-Augmented Generation (RAG)',
+          'Natural Language to SQL Systems',
+          'Classical Machine Learning (Random Forest)',
+          'Computer Vision (OpenCV)'
+        ],
+
+        developerTools: [
+          'Git',
+          'Linux',
+          'Bash',
+          'IntelliJ IDEA',
+          'VS Code',
+          'Maven'
+        ],
+
+        engineeringStrengths: [
+          'Production-Grade Backend Development',
+          'Scalable System Design',
+          'Performance Optimization',
+          'Debugging & Root Cause Analysis',
+          'Cross-Team Collaboration'
         ]
       }
     };
