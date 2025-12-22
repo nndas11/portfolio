@@ -108,10 +108,10 @@ export default function Skills() {
   // Keep achievements only if you can verify them (resume/LinkedIn/certificate).
   const achievements = [
     // If Spot Award is real, keep it. If not verifiable, remove it to avoid mismatch.
-    // {
-    //   title: 'Spot Award — CaptainFresh',
-    //   desc: 'For outstanding individual contribution and scalable designs'
-    // },
+    {
+      title: 'Spot Award — CaptainFresh',
+      desc: 'For outstanding individual contribution and scalable designs'
+    },
     {
       title: '3rd Prize — National Hackathon',
       desc: 'Plastico: waste procurement & tracking platform'
