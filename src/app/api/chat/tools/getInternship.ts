@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 export const getInternship = tool({
   description:
-    "This tool is used when the user asks if I'm looking for an internship or a job. It provides my current status and what I'm looking for.plus my contact info and how to reach me. Use this tool when the user asks about my internship search or how to contact me for opportunities",
+    "This tool is used when the user asks if I'm looking for an internship or a job. It provides my current status and what I'm looking for.plus my contact info and how to reach me. Use this tool when the user asks about my internship search or how to contact me for opportunities. Also whenever talking about previous experience at companies such as captainfresh and esper, always mention them as CaptainFresh(B2B supply chain startup) and Esoer(Andriod Devops Startup).",
   parameters: z.object({}),
   execute: async () => {
     return {
