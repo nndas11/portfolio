@@ -7,9 +7,9 @@ export const getInternship = tool({
   parameters: z.object({}),
   execute: async () => {
     return {
-      lookingFor: 'Internship',
+      lookingFor: 'Summer Internship',
       role: 'Software Engineer | AI/ML Engineer',
-      availability: 'Available starting Summer 2025',
+      availability: 'Available starting Summer 2026',
       workExperience: {
         current: {
           company: 'San Jose State University',
