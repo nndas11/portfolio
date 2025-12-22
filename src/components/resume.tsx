@@ -18,33 +18,33 @@ export function Resume() {
    * NOTE: Put your PDF in /public as: /MohammedNihad_Resume.pdf
    * Optional: add preview image in /public as: /resume-preview.png
    */
-  const resumeDetails = {
-    title: "Mohammed Nihad K P — Resume",
-    description: 'Backend & Distributed Systems • Go/Java • Cloud-Native • Applied LLM Systems',
-    fileType: 'PDF',
-    lastUpdated: 'Dec 2025',
-    fileSize: '—',
-    previewImageSrc: '/resume-preview.png', // optional
-    downloadUrl: '/MohammedNihad_Resume.pdf',
-    externalLinks: {
-      linkedin: 'https://linkedin.com/in/mohammed-nihad',
-      portfolio: 'https://mohammednihadkp.vercel.app', // change if different
-      github: 'https://github.com/', // add your exact profile
-    }
-  };
+  // const resumeDetails = {
+  //   title: "Mohammed Nihad K P — Resume",
+  //   description: 'Backend & Distributed Systems • Go/Java • Cloud-Native • Applied LLM Systems',
+  //   fileType: 'PDF',
+  //   lastUpdated: 'Dec 2025',
+  //   fileSize: '—',
+  //   previewImageSrc: '/resume-preview.png', // optional
+  //   downloadUrl: '/MohammedNihad_Resume.pdf',
+  //   externalLinks: {
+  //     linkedin: 'https://linkedin.com/in/mohammed-nihad',
+  //     portfolio: 'https://mohammednihadkp.vercel.app', // change if different
+  //     github: 'https://github.com/', // add your exact profile
+  //   }
+  // };
 
-  const handleDownload = () => {
-    const link = document.createElement('a');
-    link.href = resumeDetails.downloadUrl;
-    link.download = resumeDetails.downloadUrl.split('/').pop() || 'resume.pdf';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
+  // const handleDownload = () => {
+  //   const link = document.createElement('a');
+  //   link.href = resumeDetails.downloadUrl;
+  //   link.download = resumeDetails.downloadUrl.split('/').pop() || 'resume.pdf';
+  //   document.body.appendChild(link);
+  //   link.click();
+  //   document.body.removeChild(link);
+  // };
 
-  const handlePreview = () => {
-    window.open(resumeDetails.downloadUrl, '_blank', 'noopener,noreferrer');
-  };
+  // const handlePreview = () => {
+  //   window.open(resumeDetails.downloadUrl, '_blank', 'noopener,noreferrer');
+  // };
 
   const skillGroups = [
     {
@@ -119,7 +119,7 @@ export function Resume() {
   return (
     <div className="space-y-6">
       {/* Resume Download / Preview */}
-      <Card>
+      {/* <Card>
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FileText className="h-5 w-5" />
@@ -171,7 +171,7 @@ export function Resume() {
           </div>
 
           {/* Optional preview image */}
-          <div className="pt-2">
+          {/* <div className="pt-2">
             <div className="relative w-full overflow-hidden rounded-lg border bg-muted">
               <div className="aspect-[16/10] w-full">
                 <Image
@@ -192,7 +192,7 @@ export function Resume() {
             </p>
           </div>
         </CardContent>
-      </Card>
+      // </Card> */} 
 
       {/* Education */}
       <Card>
